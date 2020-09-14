@@ -34,3 +34,13 @@ The following packages were updated:
   com.unity.timeline from version 1.0.0 to 1.2.6
 The following packages were removed:
   com.unity.package-manager-ui@2.1.2
+
+=== Mon Sep 14 23:08:11 2020
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.render-pipelines.universal@7.3.1
+The following packages were updated:
+  com.unity.timeline from version 1.2.6 to 1.2.14

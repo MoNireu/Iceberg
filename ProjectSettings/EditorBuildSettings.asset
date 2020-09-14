@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/HungrySeal/HungrySeal.unity
+    guid: 6943f8d459bd449159e91a6f8571aa16
   m_configObjects: {}
