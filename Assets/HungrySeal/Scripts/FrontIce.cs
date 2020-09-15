@@ -28,8 +28,7 @@ public class FrontIce : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.tag == "Player")
-        {
-            Debug.Log("Collide");
+        {            
             StartCoroutine("FadeAndDestroy");
         }        
     }
@@ -48,8 +47,7 @@ public class FrontIce : MonoBehaviour
             }            
             Color c = renderer.material.color;
             c.a = alpha;
-            renderer.material.color = c;
-            Debug.Log(f);
+            renderer.material.color = c;            
             yield return null;
         }        
         
