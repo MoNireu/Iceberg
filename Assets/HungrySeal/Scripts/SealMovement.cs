@@ -11,18 +11,24 @@ public class SealMovement : MonoBehaviour
     private Joystick joystick;
     private Joybutton joybutton;
 
+
+    //force
     [SerializeField]
     private float originalHorizontalForce = 2500f;
     [SerializeField]
     private float originalVerticalForce = 3000f;
-
+    [SerializeField]
+    private float dashForce = 10000f;
     private float horizontalForce;
     private float verticalForce;
 
 
+    // check
     private bool isWater;
     private bool isGround;
 
+
+    // rotate
     private float horizontalRotate = -80f;
     private float verticalRotate = 0f;
 
@@ -65,8 +71,8 @@ public class SealMovement : MonoBehaviour
         // 대쉬 기능.
         if (Input.GetKeyDown(KeyCode.Space) || joybutton.Pressed)
         {
-            horizontalForce = 20000f;
-            verticalForce = 20000f;
+            horizontalForce = dashForce;
+            verticalForce = dashForce;
             Debug.Log("Pressed!");
         }else
         {
