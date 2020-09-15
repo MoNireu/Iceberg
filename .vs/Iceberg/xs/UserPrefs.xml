@@ -1,21 +1,20 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HungrySeal/Scripts/MainCameraMovement.cs">
+﻿<Properties StartupConfiguration="{59F22D1B-8E80-4687-1155-7AAD6753F6A5}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HungrySeal/Scripts/FishMovement.cs">
     <Files>
       <File FileName="Assets/HungrySeal/Scripts/FrontIce.cs" Line="54" Column="43" />
-      <File FileName="Assets/HungrySeal/Scripts/SealMovement.cs" Line="159" Column="6" />
-      <File FileName="Assets/HungrySeal/Scripts/Water.cs" Line="69" Column="6" />
+      <File FileName="Assets/HungrySeal/Scripts/SealMovement.cs" />
+      <File FileName="Assets/HungrySeal/Scripts/Water.cs" />
       <File FileName="Assets/HungrySeal/Scripts/MainCameraMovement.cs" Line="21" Column="29" />
+      <File FileName="Assets/HungrySeal/Scripts/FishMovement.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Iceberg" expanded="True">
-            <Node name="Assembly-CSharp" expanded="True">
-              <Node name="Assets" expanded="True">
-                <Node name="HungrySeal" expanded="True">
-                  <Node name="Scripts" expanded="True">
-                    <Node name="MainCameraMovement.cs" selected="True" />
-                  </Node>
+            <Node name="Assets" expanded="True">
+              <Node name="HungrySeal" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="FishMovement.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -26,7 +25,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="292c0f5b-dfbc-4937-9315-41ac65d6e901" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ee414f10-f6b9-4b4d-afa8-278e730ab3fa" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

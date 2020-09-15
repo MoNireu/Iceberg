@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - FishMovement
     - FixedJoystick
     - FrontIce
     - Joybutton
@@ -8,6 +9,7 @@ ScriptsOnlyBuild:
     - PolyPerfect.Animal_AIStats
     - PolyPerfect.Animal_WanderScript
     - SealMovement
+    - Water
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -47,8 +49,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -100,8 +104,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
     - Class: 91
@@ -143,69 +145,73 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12496}
     - Class: 114
-      Script: {instanceID: 12694}
+      Script: {instanceID: 12510}
     - Class: 114
-      Script: {instanceID: 12938}
+      Script: {instanceID: 12696}
     - Class: 114
-      Script: {instanceID: 13090}
+      Script: {instanceID: 12940}
     - Class: 114
-      Script: {instanceID: 13162}
+      Script: {instanceID: 13092}
     - Class: 114
-      Script: {instanceID: 13310}
+      Script: {instanceID: 13164}
     - Class: 114
-      Script: {instanceID: 13434}
+      Script: {instanceID: 13312}
     - Class: 114
-      Script: {instanceID: 13692}
+      Script: {instanceID: 13436}
     - Class: 114
-      Script: {instanceID: 13734}
+      Script: {instanceID: 13694}
     - Class: 114
-      Script: {instanceID: 13808}
+      Script: {instanceID: 13736}
     - Class: 114
-      Script: {instanceID: 13930}
+      Script: {instanceID: 13810}
     - Class: 114
-      Script: {instanceID: 14298}
+      Script: {instanceID: 13932}
     - Class: 114
-      Script: {instanceID: 14624}
+      Script: {instanceID: 14300}
     - Class: 114
-      Script: {instanceID: 14692}
+      Script: {instanceID: 14626}
     - Class: 114
-      Script: {instanceID: 14712}
+      Script: {instanceID: 14694}
     - Class: 114
-      Script: {instanceID: 14826}
+      Script: {instanceID: 14714}
     - Class: 114
-      Script: {instanceID: 14860}
+      Script: {instanceID: 14828}
     - Class: 114
-      Script: {instanceID: 14902}
+      Script: {instanceID: 14862}
     - Class: 114
-      Script: {instanceID: 14910}
+      Script: {instanceID: 14904}
     - Class: 114
-      Script: {instanceID: 15010}
+      Script: {instanceID: 14912}
     - Class: 114
-      Script: {instanceID: 15270}
+      Script: {instanceID: 15012}
     - Class: 114
-      Script: {instanceID: 15358}
+      Script: {instanceID: 15272}
     - Class: 114
-      Script: {instanceID: 15638}
+      Script: {instanceID: 15360}
     - Class: 114
-      Script: {instanceID: 15744}
+      Script: {instanceID: 15640}
     - Class: 114
-      Script: {instanceID: 15838}
+      Script: {instanceID: 15746}
     - Class: 114
-      Script: {instanceID: 15890}
+      Script: {instanceID: 15802}
     - Class: 114
-      Script: {instanceID: 16108}
+      Script: {instanceID: 15840}
+    - Class: 114
+      Script: {instanceID: 15892}
     - Class: 114
       Script: {instanceID: 16110}
     - Class: 114
-      Script: {instanceID: 16144}
+      Script: {instanceID: 16112}
     - Class: 114
-      Script: {instanceID: 16172}
+      Script: {instanceID: 16146}
     - Class: 114
-      Script: {instanceID: 16308}
+      Script: {instanceID: 16174}
     - Class: 114
-      Script: {instanceID: 16316}
+      Script: {instanceID: 16310}
     - Class: 114
-      Script: {instanceID: 30472}
+      Script: {instanceID: 16318}
+    - Class: 114
+      Script: {instanceID: 47098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -369,7 +375,7 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: 524062b047f7877df8f6b4fba20e772f
+      Hash: 76287f84d1025c650ab479ec7f6a1dde
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainCameraMovement
@@ -457,6 +463,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: c3c0f321f9e1188bf999dbb7771b4cfd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FrontIce
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -1065,7 +1077,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: fdf6fd0b675aed901d29af6191bbed14
+      Hash: 6eb67e033af9c813915c09a59759da4a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SealMovement
@@ -1077,7 +1089,7 @@ ScriptsOnlyBuild:
     className: DepthOfField
   - hash:
       serializedVersion: 2
-      Hash: e158b7435b88c0045da177fc348e25ed
+      Hash: 5e4b2d332fcc86e9db3bf6b76ccfff0c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Water
@@ -1275,10 +1287,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: c3c0f321f9e1188bf999dbb7771b4cfd
+      Hash: 412fd92894daf0f18117235f047ef007
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: FrontIce
+    className: FishMovement
   platform: 9
   scenePathNames:
   - Assets/HungrySeal/HungrySeal.unity
