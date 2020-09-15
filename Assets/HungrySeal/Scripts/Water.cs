@@ -6,28 +6,22 @@ public class Water : MonoBehaviour
 {
     public static bool isWater = false;
 
-    [SerializeField] private float waterDrag;
-    private float originDrag;
+    [SerializeField]
+    private Color waterColor = new Color(0, 0.4f, 0.7f, 0.6f);
+    [SerializeField]
+    private float waterFogDensity;
 
-    [SerializeField] private Color waterColor;
-    [SerializeField] private float waterFogDensity;
-    [SerializeField] private float waterGravity;
+    private Color defaultFogColor = RenderSettings.fogColor;    
+    private float defaultFogDensity = RenderSettings.fogDensity;
+    private bool defaultFog = RenderSettings.fog;
+    private Material defaultSkybox = RenderSettings.skybox;
+    private Material noSkybox;
 
-
-    private Color originColor;
-    private float originFogDensity;
-    private float originGravity;
 
     // Start is called before the first frame update
     void Start()
     {
-        originColor = RenderSettings.fogColor;
-        originFogDensity = RenderSettings.fogDensity;
-        originGravity = -15f;
-
-        originDrag = 1;
-
-        Physics.gravity = new Vector3(0, originGravity, 0);
+        defaultSkybox = RenderSettings.skybox;
     }
 
     // Update is called once per frame
@@ -39,19 +33,17 @@ public class Water : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.tag == "Player")
         {
-            GetInWater(other);
-            Debug.Log("Inside Water!");
+            GetInWater(other);            
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.tag == "Player")
         {
-            GetOutWater(other);
-            Debug.Log("Outside Water!");
+            GetOutWater(other);            
         }
     }
 
@@ -59,20 +51,20 @@ public class Water : MonoBehaviour
     private void GetInWater(Collider _player)
     {
         isWater = true;
-        _player.transform.GetComponent<Rigidbody>().drag = waterDrag;
 
+        RenderSettings.fog = true;
         RenderSettings.fogColor = waterColor;
         RenderSettings.fogDensity = waterFogDensity;
-        Physics.gravity = new Vector3(0, waterGravity, 0);
+        RenderSettings.skybox = noSkybox;
     }
 
     private void GetOutWater(Collider _player)
     {
         isWater = false;
-        _player.transform.GetComponent<Rigidbody>().drag = originDrag;
 
-        RenderSettings.fogColor = originColor;
-        RenderSettings.fogDensity = originFogDensity;
-        Physics.gravity = new Vector3(0, originGravity, 0);
+        RenderSettings.fog = false;
+        RenderSettings.fogColor = defaultFogColor;
+        RenderSettings.fogDensity = defaultFogDensity;
+        RenderSettings.skybox = defaultSkybox;
     }
 }

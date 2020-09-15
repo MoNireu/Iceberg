@@ -103,6 +103,8 @@ public class SealMovement : MonoBehaviour
             {
                 waterCenterPitch();
             }
+
+            
         }
         else if (isGround) // 땅일 경우
         {
@@ -155,8 +157,6 @@ public class SealMovement : MonoBehaviour
         verticalRotate = Mathf.Clamp(verticalRotate, -60f, 60f);
         transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
     }
-
-
 
 
     // Callback Methods
