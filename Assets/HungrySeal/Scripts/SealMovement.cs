@@ -5,9 +5,7 @@ using UnityEngine;
 public class SealMovement : MonoBehaviour
 {
 
-    public Rigidbody playerRd;
-    public Transform groundCheck;
-    public LayerMask groundMask;
+    public Rigidbody playerRd;        
     private Joystick joystick;
     private Joybutton joybutton;
 
@@ -40,11 +38,10 @@ public class SealMovement : MonoBehaviour
 
     // gravity
     [SerializeField]
-    public float groundGravity = -15f;
+    public float groundGravity = -20f;
     [SerializeField]
     public float oceanGravity = -1f;
-    [SerializeField]
-    public float groundCheckRadius = 0.4f;
+    [SerializeField]    
 
 
     //// Start is called before the first frame update

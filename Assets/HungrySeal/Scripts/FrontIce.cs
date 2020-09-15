@@ -47,7 +47,12 @@ public class FrontIce : MonoBehaviour
             }            
             Color c = renderer.material.color;
             c.a = alpha;
-            renderer.material.color = c;            
+            renderer.material.color = c;
+
+            transform.position = new Vector3(
+                transform.position.x,
+                transform.position.y - (1f * Time.deltaTime),
+                transform.position.y);
             yield return null;
         }        
         
