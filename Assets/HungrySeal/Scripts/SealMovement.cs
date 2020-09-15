@@ -170,9 +170,10 @@ public class SealMovement : MonoBehaviour
         }
         else 
         {
-            if (collider.tag == "Water")
+            if (collider.tag == "Water") //물
             {
                 isWater = true;
+                isGround = false;
                 Physics.gravity = new Vector3(0, oceanGravity, 0);
             }            
         }              
