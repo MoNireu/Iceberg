@@ -49,13 +49,13 @@ public class SealMovement : MonoBehaviour
         verticalForce = originalVerticalForce;
 
         joystick = FindObjectOfType<Joystick>();
-        joybutton = FindObjectOfType<Joybutton>();
+        joybutton = FindObjectOfType<Joybutton>();        
     }
 
     //// Update is called once per frame
     void Update()
     {
-        isGround = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
+        isGround = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);       
 
 
         // 공중시 횡입력 감소
@@ -83,8 +83,8 @@ public class SealMovement : MonoBehaviour
         // 조이스틱 입력
         float inputX = joystick.Horizontal;
         float inputY = joystick.Vertical;
-        //float inputX = Input.GetAxis("Horizontal");
-        //float inputY = Input.GetAxis("Vertical");
+        //inputX = Input.GetAxis("Horizontal");
+        //inputY = Input.GetAxis("Vertical");
 
         // 종 이동.
         if (isWater)
@@ -113,72 +113,28 @@ public class SealMovement : MonoBehaviour
         }
 
 
-        //if (Input.GetKey("w")) //up
-        //{
-        //    if (isWater)
-        //    {
-        //        playerRd.AddForce(0, verticalForce * Time.deltaTime, 0);
-        //        verticalRotate -= 4f;
-        //        verticalRotate = Mathf.Clamp(verticalRotate, -60f, 60f);
-        //        transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
-        //    }
-        //    else
-        //    {
-        //        centerPitch();
-        //    }            
-        //}
-
-        //if (Input.GetKey("s")) //down
-        //{
-        //    if (isWater)
-        //    {
-        //        playerRd.AddForce(0, -verticalForce * Time.deltaTime, 0);
-        //        verticalRotate += 4f;
-        //        verticalRotate = Mathf.Clamp(verticalRotate, -60f, 60f);
-        //        transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
-        //    }
-        //    else
-        //    {
-        //        centerPitch();
-        //    }           
-        //}
-
-        //if (Input.GetKey("a")) //left
-        //{            
-        //    playerRd.AddForce(-horizontalForce * Time.deltaTime, 0, 0);
-        //    horizontalRotate -= 10f;
-        //    horizontalRotate = Mathf.Clamp(horizontalRotate, -90f, 90f);
-        //    transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
-        //}
-
-        //if (Input.GetKey("d")) // right
-        //{            
-        //    playerRd.AddForce(horizontalForce * Time.deltaTime, 0, 0);
-        //    horizontalRotate += 10f;
-        //    horizontalRotate = Mathf.Clamp(horizontalRotate, -90f, 90f);
-        //    transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
-        //}        
-
-        // centerPitch
-        //if (!Input.GetKey("w") && !Input.GetKey("s"))
-        //{
-        //    centerPitch();
-        //}
-
-   
+      
     }  
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        isWater = true;     
-        Physics.gravity = new Vector3(0, oceanGravity, 0);
+        if (collider.tag == "Water")
+        {
+            isWater = true;
+            Physics.gravity = new Vector3(0, oceanGravity, 0);
+        }
+        
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider collider)
     {
-        isWater = false;        
-        Debug.Log("notWater");
-        Physics.gravity = new Vector3(0, groundGravity, 0);
+        if (collider.tag == "Water")
+        {
+            isWater = false;
+            Debug.Log("notWater");
+            Physics.gravity = new Vector3(0, groundGravity, 0);
+        }
+        
     }
 
     private void centerPitch()
