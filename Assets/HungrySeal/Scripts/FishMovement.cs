@@ -22,7 +22,7 @@ public class FishMovement : MonoBehaviour
     void Start()
     {                
         targetPosition = getNewRandomPosition();
-        defaultScale = transform.localScale.x;
+        defaultScale = transform.localScale.x;        
     }
 
     
@@ -43,12 +43,8 @@ public class FishMovement : MonoBehaviour
         {
             goToNewPosition();            
         }
-        
-        checkMoveComplete();
 
-
-
-        Debug.Log(targetPosition);
+        checkMoveComplete();        
     }
 
 
