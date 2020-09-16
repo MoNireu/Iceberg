@@ -64,12 +64,13 @@ public class SealMovement : MonoBehaviour
         // 조이스틱 입력
         float inputX = joystick.Horizontal;
         float inputY = joystick.Vertical;
+
         //inputX = Input.GetAxis("Horizontal");
         //inputY = Input.GetAxis("Vertical");
+       
 
-
-        // 대쉬 기능.
-        if (Input.GetKeyDown(KeyCode.Space) || joybutton.Pressed)
+            // 대쉬 기능.
+            if (Input.GetKeyDown(KeyCode.Space) || joybutton.Pressed)
         {
             horizontalForce = dashForce;
             verticalForce = dashForce;
@@ -84,7 +85,7 @@ public class SealMovement : MonoBehaviour
         playerRd.AddForce(inputX * horizontalForce * Time.deltaTime, 0, 0);
         horizontalRotate += rotateSpeed * inputX * Time.deltaTime;
         horizontalRotate = Mathf.Clamp(horizontalRotate, -90f, 90f);
-        transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
+        transform.rotation = Quaternion.Euler(this.verticalRotate, horizontalRotate, 0);
 
 
 
@@ -94,11 +95,12 @@ public class SealMovement : MonoBehaviour
             horizontalForce = originalHorizontalForce; // 횡 입력값 복구.
             playerRd.drag = originalDrag; //저항값 복구.
 
+            // 피치 결정.
+            setSealPitch(inputX, inputY);
+
             // 종 이동
-            playerRd.AddForce(0, inputY * verticalForce * Time.deltaTime, 0);
-            verticalRotate -= 4f * inputY;
-            verticalRotate = Mathf.Clamp(verticalRotate, -60f, 60f);
-            transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
+            playerRd.AddForce(0, inputY * verticalForce * Time.deltaTime, 0);            
+            transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);            
 
             // 종 입력이 없을 경우
             if (inputY == 0) // Pitch 중앙 정렬.
@@ -131,13 +133,13 @@ public class SealMovement : MonoBehaviour
         if (verticalRotate > 0)
         {
             verticalRotate -= verticalRotateRate;
-            verticalRotate = Mathf.Clamp(verticalRotate, -60f, 60f);
+            verticalRotate = Mathf.Clamp(verticalRotate, -89f, 89f);
             transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
         }
         else if (verticalRotate < 0)
         {
             verticalRotate += verticalRotateRate;
-            verticalRotate = Mathf.Clamp(verticalRotate, -60f, 60f);
+            verticalRotate = Mathf.Clamp(verticalRotate, -89f, 89f);
             transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
         }
         else
@@ -156,7 +158,7 @@ public class SealMovement : MonoBehaviour
     {
         float verticalRotateRate = 1.5f;
         verticalRotate += verticalRotateRate;
-        verticalRotate = Mathf.Clamp(verticalRotate, -60f, 60f);
+        verticalRotate = Mathf.Clamp(verticalRotate, -89f, 89f);
         transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
     }
 
@@ -206,8 +208,34 @@ public class SealMovement : MonoBehaviour
         }
         
     }
-   
 
-   
-       
+
+    private void setSealPitch(float x, float y)
+    {
+        float joystickAngle = (Mathf.Atan2(y, x) * 180 / Mathf.PI);
+
+        if (joystickAngle > -180 && joystickAngle < 0)
+        {
+            this.verticalRotate = joystickAngle + 180; //우,상            
+            if (verticalRotate > 90 && verticalRotate < 180) //우,하
+            {
+                this.verticalRotate -= 180;
+                verticalRotate *= -1;
+            }
+        }
+        if (joystickAngle > 0 && joystickAngle < 180)
+        {
+            this.verticalRotate = joystickAngle - 180; //좌,상            
+            if (verticalRotate > -180 && verticalRotate < -90) //좌,하
+            {
+                verticalRotate += 180;
+                verticalRotate *= -1;
+            }
+        }
+
+    }
+
+
+
+
 }
