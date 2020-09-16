@@ -13,7 +13,6 @@ ScriptsOnlyBuild:
     - PolyPerfect.Animal_AIStats
     - PolyPerfect.Animal_WanderScript
     - SealMovement
-    - Water
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -194,8 +193,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 15642}
     - Class: 114
       Script: {instanceID: 15748}
-    - Class: 114
-      Script: {instanceID: 15804}
     - Class: 114
       Script: {instanceID: 15842}
     - Class: 114

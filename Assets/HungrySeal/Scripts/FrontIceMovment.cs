@@ -14,6 +14,6 @@ public class FrontIceMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidbody.AddForce(500f, 0, 0);
+        rigidbody.AddForce(30000f * Time.deltaTime, 0, 0);
     }
 }

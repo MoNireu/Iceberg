@@ -568,6 +568,7 @@ IL2CPP_EXTERN_C const uint32_t SealMovement_Start_m6D5D5FC8F58C6A1F01BEBB5D290A1
 IL2CPP_EXTERN_C const uint32_t SealMovement_Update_m1081F16BB088EF8C62B192757876D64553E03022_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t SealMovement_downPitch_m43DD850910E2A861EF2E0FE251483D0EC2F5019D_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t SealMovement_groundCenterPitch_mB40879560748C83772C6CFA7AC0CB1B74DC1C43F_MetadataUsageId;
+IL2CPP_EXTERN_C const uint32_t SealMovement_setSealPitch_m8BC3E0AF5E5E29179B8C204F4BAEDECD0E0C395C_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t SealMovement_waterCenterPitch_m5F793EFD38F1E4BC09193F1974C31D57706A6A57_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t ToggleEvent_Awake_m714ECA404D09741AA5D9EA576BC8C44A9F65CB2A_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t U3CChaseCheckU3Ed__82_MoveNext_m3541683B082CF8B3F45722A5EF27E116167FFE4B_MetadataUsageId;
@@ -9087,6 +9088,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Mathf_Clamp_m2416F3B785C8F135863E3D17E5
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Quaternion_t6D28618CF65156D4A0AD747370DDFD0C514A31B4  Quaternion_Euler_m37BF99FFFA09F4B3F83DC066641B82C59B19A9C3 (float ___x0, float ___y1, float ___z2, const RuntimeMethod* method);
 // System.Void UnityEngine.Rigidbody::set_drag(System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody_set_drag_m60E39BE31529DE5163116785A69FACC77C52DA98 (Rigidbody_t101F2E2F9F16E765A77429B2DE4527D2047A887A * __this, float ___value0, const RuntimeMethod* method);
+// System.Void SealMovement::setSealPitch(System.Single,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SealMovement_setSealPitch_m8BC3E0AF5E5E29179B8C204F4BAEDECD0E0C395C (SealMovement_tC7F6A9689B0EB1A80D719EAA9666F961C2C783DB * __this, float ___x0, float ___y1, const RuntimeMethod* method);
 // System.Void SealMovement::waterCenterPitch()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SealMovement_waterCenterPitch_m5F793EFD38F1E4BC09193F1974C31D57706A6A57 (SealMovement_tC7F6A9689B0EB1A80D719EAA9666F961C2C783DB * __this, const RuntimeMethod* method);
 // System.Void SealMovement::groundCenterPitch()
@@ -14896,10 +14899,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FrontIceMovment_Start_m75EAB23BF5FDB6D19
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FrontIceMovment_Update_m6673E5FD290247B188FC3A5444D18D2573602AC8 (FrontIceMovment_t5196AE28ADC81C12908CEFB5C3E520EA51314154 * __this, const RuntimeMethod* method)
 {
 	{
-		// rigidbody.AddForce(500f, 0, 0);
+		// rigidbody.AddForce(30000f * Time.deltaTime, 0, 0);
 		Rigidbody_t101F2E2F9F16E765A77429B2DE4527D2047A887A * L_0 = __this->get_rigidbody_4();
+		float L_1 = Time_get_deltaTime_mCC15F147DA67F38C74CE408FB5D7FF4A87DA2290(/*hidden argument*/NULL);
 		NullCheck(L_0);
-		Rigidbody_AddForce_mFF44DF454FDA13ADFD3CAA4958C4265E45BCF773(L_0, (500.0f), (0.0f), (0.0f), /*hidden argument*/NULL);
+		Rigidbody_AddForce_mFF44DF454FDA13ADFD3CAA4958C4265E45BCF773(L_0, ((float)il2cpp_codegen_multiply((float)(30000.0f), (float)L_1)), (0.0f), (0.0f), /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -17693,7 +17697,7 @@ IL_006a:
 		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
 		float L_20 = Mathf_Clamp_m2416F3B785C8F135863E3D17E5B0CB4174797B87(L_19, (-90.0f), (90.0f), /*hidden argument*/NULL);
 		__this->set_horizontalRotate_16(L_20);
-		// transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
+		// transform.rotation = Quaternion.Euler(this.verticalRotate, horizontalRotate, 0);
 		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_21 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
 		float L_22 = __this->get_verticalRotate_17();
 		float L_23 = __this->get_horizontalRotate_16();
@@ -17705,7 +17709,7 @@ IL_006a:
 		bool L_25 = __this->get_isWater_14();
 		if (!L_25)
 		{
-			goto IL_018e;
+			goto IL_0164;
 		}
 	}
 	{
@@ -17717,35 +17721,30 @@ IL_006a:
 		float L_28 = __this->get_originalDrag_11();
 		NullCheck(L_27);
 		Rigidbody_set_drag_m60E39BE31529DE5163116785A69FACC77C52DA98(L_27, L_28, /*hidden argument*/NULL);
-		// playerRd.AddForce(0, inputY * verticalForce * Time.deltaTime, 0);
-		Rigidbody_t101F2E2F9F16E765A77429B2DE4527D2047A887A * L_29 = __this->get_playerRd_4();
+		// setSealPitch(inputX, inputY);
+		float L_29 = V_0;
 		float L_30 = V_1;
-		float L_31 = __this->get_verticalForce_13();
-		float L_32 = Time_get_deltaTime_mCC15F147DA67F38C74CE408FB5D7FF4A87DA2290(/*hidden argument*/NULL);
-		NullCheck(L_29);
-		Rigidbody_AddForce_mFF44DF454FDA13ADFD3CAA4958C4265E45BCF773(L_29, (0.0f), ((float)il2cpp_codegen_multiply((float)((float)il2cpp_codegen_multiply((float)L_30, (float)L_31)), (float)L_32)), (0.0f), /*hidden argument*/NULL);
-		// verticalRotate -= 4f * inputY;
-		float L_33 = __this->get_verticalRotate_17();
-		float L_34 = V_1;
-		__this->set_verticalRotate_17(((float)il2cpp_codegen_subtract((float)L_33, (float)((float)il2cpp_codegen_multiply((float)(4.0f), (float)L_34)))));
-		// verticalRotate = Mathf.Clamp(verticalRotate, -60f, 60f);
-		float L_35 = __this->get_verticalRotate_17();
-		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
-		float L_36 = Mathf_Clamp_m2416F3B785C8F135863E3D17E5B0CB4174797B87(L_35, (-60.0f), (60.0f), /*hidden argument*/NULL);
-		__this->set_verticalRotate_17(L_36);
+		SealMovement_setSealPitch_m8BC3E0AF5E5E29179B8C204F4BAEDECD0E0C395C(__this, L_29, L_30, /*hidden argument*/NULL);
+		// playerRd.AddForce(0, inputY * verticalForce * Time.deltaTime, 0);
+		Rigidbody_t101F2E2F9F16E765A77429B2DE4527D2047A887A * L_31 = __this->get_playerRd_4();
+		float L_32 = V_1;
+		float L_33 = __this->get_verticalForce_13();
+		float L_34 = Time_get_deltaTime_mCC15F147DA67F38C74CE408FB5D7FF4A87DA2290(/*hidden argument*/NULL);
+		NullCheck(L_31);
+		Rigidbody_AddForce_mFF44DF454FDA13ADFD3CAA4958C4265E45BCF773(L_31, (0.0f), ((float)il2cpp_codegen_multiply((float)((float)il2cpp_codegen_multiply((float)L_32, (float)L_33)), (float)L_34)), (0.0f), /*hidden argument*/NULL);
 		// transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
-		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_37 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
-		float L_38 = __this->get_verticalRotate_17();
-		float L_39 = __this->get_horizontalRotate_16();
+		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_35 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
+		float L_36 = __this->get_verticalRotate_17();
+		float L_37 = __this->get_horizontalRotate_16();
 		IL2CPP_RUNTIME_CLASS_INIT(Quaternion_t6D28618CF65156D4A0AD747370DDFD0C514A31B4_il2cpp_TypeInfo_var);
-		Quaternion_t6D28618CF65156D4A0AD747370DDFD0C514A31B4  L_40 = Quaternion_Euler_m37BF99FFFA09F4B3F83DC066641B82C59B19A9C3(L_38, L_39, (0.0f), /*hidden argument*/NULL);
-		NullCheck(L_37);
-		Transform_set_rotation_m1B5F3D4CE984AB31254615C9C71B0E54978583B4(L_37, L_40, /*hidden argument*/NULL);
+		Quaternion_t6D28618CF65156D4A0AD747370DDFD0C514A31B4  L_38 = Quaternion_Euler_m37BF99FFFA09F4B3F83DC066641B82C59B19A9C3(L_36, L_37, (0.0f), /*hidden argument*/NULL);
+		NullCheck(L_35);
+		Transform_set_rotation_m1B5F3D4CE984AB31254615C9C71B0E54978583B4(L_35, L_38, /*hidden argument*/NULL);
 		// if (inputY == 0) // Pitch ?? ??.
-		float L_41 = V_1;
-		if ((!(((float)L_41) == ((float)(0.0f)))))
+		float L_39 = V_1;
+		if ((!(((float)L_39) == ((float)(0.0f)))))
 		{
-			goto IL_01f4;
+			goto IL_01ca;
 		}
 	}
 	{
@@ -17755,43 +17754,43 @@ IL_006a:
 		return;
 	}
 
-IL_018e:
+IL_0164:
 	{
 		// else if (isGround) // ?? ??
-		bool L_42 = __this->get_isGround_15();
-		if (!L_42)
+		bool L_40 = __this->get_isGround_15();
+		if (!L_40)
 		{
-			goto IL_01b9;
+			goto IL_018f;
 		}
 	}
 	{
 		// horizontalForce = originalHorizontalForce; // ? ??? ??.
-		float L_43 = __this->get_originalHorizontalForce_7();
-		__this->set_horizontalForce_12(L_43);
+		float L_41 = __this->get_originalHorizontalForce_7();
+		__this->set_horizontalForce_12(L_41);
 		// groundCenterPitch();
 		SealMovement_groundCenterPitch_mB40879560748C83772C6CFA7AC0CB1B74DC1C43F(__this, /*hidden argument*/NULL);
 		// playerRd.drag = 1f;
-		Rigidbody_t101F2E2F9F16E765A77429B2DE4527D2047A887A * L_44 = __this->get_playerRd_4();
-		NullCheck(L_44);
-		Rigidbody_set_drag_m60E39BE31529DE5163116785A69FACC77C52DA98(L_44, (1.0f), /*hidden argument*/NULL);
+		Rigidbody_t101F2E2F9F16E765A77429B2DE4527D2047A887A * L_42 = __this->get_playerRd_4();
+		NullCheck(L_42);
+		Rigidbody_set_drag_m60E39BE31529DE5163116785A69FACC77C52DA98(L_42, (1.0f), /*hidden argument*/NULL);
 		// }
 		return;
 	}
 
-IL_01b9:
+IL_018f:
 	{
 		// else if (!isGround && !isWater)// ??? ??
-		bool L_45 = __this->get_isGround_15();
-		if (L_45)
+		bool L_43 = __this->get_isGround_15();
+		if (L_43)
 		{
-			goto IL_01f4;
+			goto IL_01ca;
 		}
 	}
 	{
-		bool L_46 = __this->get_isWater_14();
-		if (L_46)
+		bool L_44 = __this->get_isWater_14();
+		if (L_44)
 		{
-			goto IL_01f4;
+			goto IL_01ca;
 		}
 	}
 	{
@@ -17801,14 +17800,14 @@ IL_01b9:
 		// horizontalForce = 1000f; // ? ??? ??.
 		__this->set_horizontalForce_12((1000.0f));
 		// playerRd.drag = 1f;
-		Rigidbody_t101F2E2F9F16E765A77429B2DE4527D2047A887A * L_47 = __this->get_playerRd_4();
-		NullCheck(L_47);
-		Rigidbody_set_drag_m60E39BE31529DE5163116785A69FACC77C52DA98(L_47, (1.0f), /*hidden argument*/NULL);
+		Rigidbody_t101F2E2F9F16E765A77429B2DE4527D2047A887A * L_45 = __this->get_playerRd_4();
+		NullCheck(L_45);
+		Rigidbody_set_drag_m60E39BE31529DE5163116785A69FACC77C52DA98(L_45, (1.0f), /*hidden argument*/NULL);
 		// downPitch(); // Pitch ??.
 		SealMovement_downPitch_m43DD850910E2A861EF2E0FE251483D0EC2F5019D(__this, /*hidden argument*/NULL);
 	}
 
-IL_01f4:
+IL_01ca:
 	{
 		// }
 		return;
@@ -17839,10 +17838,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SealMovement_waterCenterPitch_m5F793EFD3
 		float L_1 = __this->get_verticalRotate_17();
 		float L_2 = V_0;
 		__this->set_verticalRotate_17(((float)il2cpp_codegen_subtract((float)L_1, (float)L_2)));
-		// verticalRotate = Mathf.Clamp(verticalRotate, -60f, 60f);
+		// verticalRotate = Mathf.Clamp(verticalRotate, -89f, 89f);
 		float L_3 = __this->get_verticalRotate_17();
 		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
-		float L_4 = Mathf_Clamp_m2416F3B785C8F135863E3D17E5B0CB4174797B87(L_3, (-60.0f), (60.0f), /*hidden argument*/NULL);
+		float L_4 = Mathf_Clamp_m2416F3B785C8F135863E3D17E5B0CB4174797B87(L_3, (-89.0f), (89.0f), /*hidden argument*/NULL);
 		__this->set_verticalRotate_17(L_4);
 		// transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
 		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_5 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
@@ -17870,10 +17869,10 @@ IL_005e:
 		float L_10 = __this->get_verticalRotate_17();
 		float L_11 = V_0;
 		__this->set_verticalRotate_17(((float)il2cpp_codegen_add((float)L_10, (float)L_11)));
-		// verticalRotate = Mathf.Clamp(verticalRotate, -60f, 60f);
+		// verticalRotate = Mathf.Clamp(verticalRotate, -89f, 89f);
 		float L_12 = __this->get_verticalRotate_17();
 		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
-		float L_13 = Mathf_Clamp_m2416F3B785C8F135863E3D17E5B0CB4174797B87(L_12, (-60.0f), (60.0f), /*hidden argument*/NULL);
+		float L_13 = Mathf_Clamp_m2416F3B785C8F135863E3D17E5B0CB4174797B87(L_12, (-89.0f), (89.0f), /*hidden argument*/NULL);
 		__this->set_verticalRotate_17(L_13);
 		// transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
 		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_14 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
@@ -17941,10 +17940,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SealMovement_downPitch_m43DD850910E2A861
 		float L_0 = __this->get_verticalRotate_17();
 		float L_1 = V_0;
 		__this->set_verticalRotate_17(((float)il2cpp_codegen_add((float)L_0, (float)L_1)));
-		// verticalRotate = Mathf.Clamp(verticalRotate, -60f, 60f);
+		// verticalRotate = Mathf.Clamp(verticalRotate, -89f, 89f);
 		float L_2 = __this->get_verticalRotate_17();
 		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
-		float L_3 = Mathf_Clamp_m2416F3B785C8F135863E3D17E5B0CB4174797B87(L_2, (-60.0f), (60.0f), /*hidden argument*/NULL);
+		float L_3 = Mathf_Clamp_m2416F3B785C8F135863E3D17E5B0CB4174797B87(L_2, (-89.0f), (89.0f), /*hidden argument*/NULL);
 		__this->set_verticalRotate_17(L_3);
 		// transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
 		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_4 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
@@ -18101,6 +18100,113 @@ IL_0020:
 	}
 
 IL_0053:
+	{
+		// }
+		return;
+	}
+}
+// System.Void SealMovement::setSealPitch(System.Single,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SealMovement_setSealPitch_m8BC3E0AF5E5E29179B8C204F4BAEDECD0E0C395C (SealMovement_tC7F6A9689B0EB1A80D719EAA9666F961C2C783DB * __this, float ___x0, float ___y1, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SealMovement_setSealPitch_m8BC3E0AF5E5E29179B8C204F4BAEDECD0E0C395C_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	float V_0 = 0.0f;
+	{
+		// float joystickAngle = (Mathf.Atan2(y, x) * 180 / Mathf.PI);
+		float L_0 = ___y1;
+		float L_1 = ___x0;
+		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
+		float L_2 = atan2f(L_0, L_1);
+		V_0 = ((float)((float)((float)il2cpp_codegen_multiply((float)L_2, (float)(180.0f)))/(float)(3.14159274f)));
+		// if (joystickAngle > -180 && joystickAngle < 0)
+		float L_3 = V_0;
+		if ((!(((float)L_3) > ((float)(-180.0f)))))
+		{
+			goto IL_006f;
+		}
+	}
+	{
+		float L_4 = V_0;
+		if ((!(((float)L_4) < ((float)(0.0f)))))
+		{
+			goto IL_006f;
+		}
+	}
+	{
+		// this.verticalRotate = joystickAngle + 180; //?,?
+		float L_5 = V_0;
+		__this->set_verticalRotate_17(((float)il2cpp_codegen_add((float)L_5, (float)(180.0f))));
+		// if (verticalRotate > 90 && verticalRotate < 180) //?,?
+		float L_6 = __this->get_verticalRotate_17();
+		if ((!(((float)L_6) > ((float)(90.0f)))))
+		{
+			goto IL_006f;
+		}
+	}
+	{
+		float L_7 = __this->get_verticalRotate_17();
+		if ((!(((float)L_7) < ((float)(180.0f)))))
+		{
+			goto IL_006f;
+		}
+	}
+	{
+		// this.verticalRotate -= 180;
+		float L_8 = __this->get_verticalRotate_17();
+		__this->set_verticalRotate_17(((float)il2cpp_codegen_subtract((float)L_8, (float)(180.0f))));
+		// verticalRotate *= -1;
+		float L_9 = __this->get_verticalRotate_17();
+		__this->set_verticalRotate_17(((float)il2cpp_codegen_multiply((float)L_9, (float)(-1.0f))));
+	}
+
+IL_006f:
+	{
+		// if (joystickAngle > 0 && joystickAngle < 180)
+		float L_10 = V_0;
+		if ((!(((float)L_10) > ((float)(0.0f)))))
+		{
+			goto IL_00ca;
+		}
+	}
+	{
+		float L_11 = V_0;
+		if ((!(((float)L_11) < ((float)(180.0f)))))
+		{
+			goto IL_00ca;
+		}
+	}
+	{
+		// this.verticalRotate = joystickAngle - 180; //?,?
+		float L_12 = V_0;
+		__this->set_verticalRotate_17(((float)il2cpp_codegen_subtract((float)L_12, (float)(180.0f))));
+		// if (verticalRotate > -180 && verticalRotate < -90) //?,?
+		float L_13 = __this->get_verticalRotate_17();
+		if ((!(((float)L_13) > ((float)(-180.0f)))))
+		{
+			goto IL_00ca;
+		}
+	}
+	{
+		float L_14 = __this->get_verticalRotate_17();
+		if ((!(((float)L_14) < ((float)(-90.0f)))))
+		{
+			goto IL_00ca;
+		}
+	}
+	{
+		// verticalRotate += 180;
+		float L_15 = __this->get_verticalRotate_17();
+		__this->set_verticalRotate_17(((float)il2cpp_codegen_add((float)L_15, (float)(180.0f))));
+		// verticalRotate *= -1;
+		float L_16 = __this->get_verticalRotate_17();
+		__this->set_verticalRotate_17(((float)il2cpp_codegen_multiply((float)L_16, (float)(-1.0f))));
+	}
+
+IL_00ca:
 	{
 		// }
 		return;

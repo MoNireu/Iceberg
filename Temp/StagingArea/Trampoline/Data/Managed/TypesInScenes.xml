@@ -69,7 +69,6 @@
 		<type fullname="PolyPerfect.Animal_AIStats" preserve="nothing"/>
 		<type fullname="PolyPerfect.Animal_WanderScript" preserve="nothing"/>
 		<type fullname="SealMovement" preserve="nothing"/>
-		<type fullname="Water" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.RenderPipelines.Core.Runtime">
 		<type fullname="UnityEngine.Rendering.UI.DebugUIHandlerBitField" preserve="nothing"/>

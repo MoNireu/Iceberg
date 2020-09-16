@@ -659,13 +659,6 @@
             "usedInScenes": []
         },
         {
-            "managedAssemblyName": "Assembly-CSharp.dll",
-            "nativeClass": "",
-            "fullManagedTypeName": "Water",
-            "moduleName": "",
-            "usedInScenes": []
-        },
-        {
             "managedAssemblyName": "Unity.RenderPipelines.Core.Runtime.dll",
             "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.Rendering.UI.DebugUIHandlerBitField",
