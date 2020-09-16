@@ -62,7 +62,7 @@
     <Compile Include="Assets/Assets/polyperfect 2/Common/Wander Script/AIStats.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Low Poly Animated Animals/- Scripts/Wander Script/Animal_WanderScript.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/MainCameraMovement.cs" />
-    <Compile Include="Assets/HungrySeal/Scripts/FrontIce.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/FishMovement.cs" />
     <Compile Include="Assets/Assets/Joystick Pack/Examples/JoystickSetterExample.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Low Poly Animated Animals/- Scripts/Wander Script/Animal_AIStats.cs" />
     <Compile Include="Assets/Assets/LowPolyWater_Pack/Scripts/LowPolyWater.cs" />
@@ -90,7 +90,9 @@
     <Compile Include="Assets/HungrySeal/Scripts/Water.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Common/Common_AnimSpeed.cs" />
     <Compile Include="Assets/Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs" />
-    <Compile Include="Assets/HungrySeal/Scripts/FishMovement.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/IceBreakManager.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/FrontIceMovment.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/IceSpawnManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/Assets/HolyShift/Shaders/FXWaterLowpoly.shader" />

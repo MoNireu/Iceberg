@@ -62,10 +62,10 @@ public class SealMovement : MonoBehaviour
         // 조이스틱 입력
         float inputX = joystick.Horizontal;
         float inputY = joystick.Vertical;
-        //inputX = Input.GetAxis("Horizontal");
-        //inputY = Input.GetAxis("Vertical");
-     
-        
+        inputX = Input.GetAxis("Horizontal");
+        inputY = Input.GetAxis("Vertical");
+
+
         // 대쉬 기능.
         if (Input.GetKeyDown(KeyCode.Space) || joybutton.Pressed)
         {
