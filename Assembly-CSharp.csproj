@@ -93,6 +93,8 @@
     <Compile Include="Assets/HungrySeal/Scripts/IceBreakManager.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/FrontIceMovment.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/IceSpawnManager.cs" />
+    <Compile Include="Assets/IceDestroyManager.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/NpcDestroyManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/Assets/HolyShift/Shaders/FXWaterLowpoly.shader" />

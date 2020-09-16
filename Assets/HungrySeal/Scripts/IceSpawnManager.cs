@@ -28,9 +28,7 @@ public class IceSpawnManager : MonoBehaviour
         if (randomDelayTime < 0)
         {
             resetRandomValues();
-            createIce(randomSelectValue);
-            Debug.Log("randomTime = " + randomDelayTime);
-            
+            createIce(randomSelectValue);                        
         }
         else
         {

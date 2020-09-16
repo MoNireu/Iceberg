@@ -35,6 +35,11 @@ public class IceBreakManager : MonoBehaviour
         {
             StartCoroutine("FadeAndDestroy");
         }
+
+        if (collider.tag == "DestroyIce")
+        {
+            StartCoroutine("FadeAndDestroy");
+        }
     }
 
     IEnumerator FadeAndDestroy()

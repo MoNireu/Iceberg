@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{59F22D1B-8E80-4687-1155-7AAD6753F6A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HungrySeal/Scripts/IceSpawnManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HungrySeal/Scripts/NpcDestroyManager.cs">
     <Files>
       <File FileName="Assets/HungrySeal/Scripts/SealMovement.cs" Line="66" Column="44" />
       <File FileName="Assets/HungrySeal/Scripts/Water.cs" Line="1" Column="1" />
       <File FileName="Assets/HungrySeal/Scripts/MainCameraMovement.cs" />
       <File FileName="Assets/HungrySeal/Scripts/FishMovement.cs" />
-      <File FileName="Assets/HungrySeal/Scripts/IceBreakManager.cs" Line="11" Column="1" />
-      <File FileName="Assets/HungrySeal/Scripts/FrontIceMovment.cs" Line="19" Column="2" />
-      <File FileName="Assets/HungrySeal/Scripts/IceSpawnManager.cs" Line="7" Column="23" />
+      <File FileName="Assets/HungrySeal/Scripts/IceBreakManager.cs" Line="44" Column="1" />
+      <File FileName="Assets/HungrySeal/Scripts/FrontIceMovment.cs" Line="17" Column="31" />
+      <File FileName="Assets/HungrySeal/Scripts/IceSpawnManager.cs" Line="31" Column="54" />
+      <File FileName="Assets/HungrySeal/Scripts/NpcDestroyManager.cs" Line="6" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,7 +17,7 @@
             <Node name="Assets" expanded="True">
               <Node name="HungrySeal" expanded="True">
                 <Node name="Scripts" expanded="True">
-                  <Node name="IceSpawnManager.cs" selected="True" />
+                  <Node name="NpcDestroyManager.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
