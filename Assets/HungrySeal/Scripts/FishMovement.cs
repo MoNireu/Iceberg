@@ -8,8 +8,7 @@ public class FishMovement : MonoBehaviour
 
     [SerializeField] private float randomHorizontalRange;
     [SerializeField] private float randomVerticalRange;
-    [SerializeField] private float speed = 2;
-    [SerializeField] private float timeForNewPath;
+    [SerializeField] private float speed = 2;    
     [SerializeField] private float delayTime;
     private float timer = 0;
 
@@ -58,11 +57,21 @@ public class FishMovement : MonoBehaviour
 
     void goToNewPosition()
     {
-        //navMeshAgent.SetDestination(getNewRandomPosition());
+        Vector3 currentPosition = transform.position;
         transform.position = Vector3.MoveTowards(
-            transform.position,
+            currentPosition,
             targetPosition,
-            speed * Time.deltaTime);        
+            speed * Time.deltaTime);
+
+        float angle = Mathf.Atan2(
+            targetPosition.y - currentPosition.y,
+            targetPosition.x - currentPosition.x) * 180 / Mathf.PI;
+
+        if (gameObject.tag == "JellyFish")
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+        }
+        
     }
 
     void checkMoveComplete()

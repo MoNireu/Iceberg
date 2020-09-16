@@ -23,6 +23,13 @@ public class NpcDestroyManager : MonoBehaviour
             Debug.Log("NPC Collide");
             // 점수를 올리는 함수.
             Destroy(npc.gameObject);
-        }        
+        }
+
+        if (npc.tag == "JellyFish")
+        {
+            Debug.Log("NPC Collide");
+            // 점수를 올리는 함수.
+            Destroy(npc.gameObject);
+        }
     }
 }

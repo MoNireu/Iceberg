@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 6682308807190189639}
   - component: {fileID: 6889391094317552661}
   - component: {fileID: 6713457506245359063}
-  - component: {fileID: 6713457506245359060}
+  - component: {fileID: -1627920550769402965}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Fish
@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 6713015813902056017}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.008, y: -15, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 6717772456558562797}
   - {fileID: 6711541411008256507}
@@ -194,7 +194,7 @@ CapsuleCollider:
   m_Height: 0.95
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: -0.57}
---- !u!114 &6713457506245359060
+--- !u!114 &-1627920550769402965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,13 +203,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6713015813902056017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40a86c21dd5b44b34bfc11bc1ad37b67, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b4d4f1f5fe1546858e6b717b39bc7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   randomHorizontalRange: 50
   randomVerticalRange: -50
-  speed: 2
-  timeForNewPath: 2
+  speed: 3
   delayTime: 2
 --- !u!1 &6713832244151591817
 GameObject:
