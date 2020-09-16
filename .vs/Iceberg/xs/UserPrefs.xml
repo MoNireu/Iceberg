@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{59F22D1B-8E80-4687-1155-7AAD6753F6A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HungrySeal/Scripts/SealMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HungrySeal/Scripts/FrontIce.cs">
     <Files>
       <File FileName="Assets/HungrySeal/Scripts/FrontIce.cs" Line="54" Column="43" />
       <File FileName="Assets/HungrySeal/Scripts/SealMovement.cs" Line="168" Column="29" />
       <File FileName="Assets/HungrySeal/Scripts/Water.cs" />
-      <File FileName="Assets/HungrySeal/Scripts/MainCameraMovement.cs" Line="39" Column="6" />
-      <File FileName="Assets/HungrySeal/Scripts/FishMovement.cs" Line="30" Column="21" />
+      <File FileName="Assets/HungrySeal/Scripts/MainCameraMovement.cs" />
+      <File FileName="Assets/HungrySeal/Scripts/FishMovement.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +14,7 @@
             <Node name="Assets" expanded="True">
               <Node name="HungrySeal" expanded="True">
                 <Node name="Scripts" expanded="True">
-                  <Node name="SealMovement.cs" selected="True" />
+                  <Node name="FrontIce.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -25,7 +25,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ee414f10-f6b9-4b4d-afa8-278e730ab3fa" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c11cf3e1-d56f-4ecb-a5f9-e28eabac7046" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

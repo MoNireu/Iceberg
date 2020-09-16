@@ -6,6 +6,8 @@ public class FrontIce : MonoBehaviour
 {
 
     public Renderer renderer;
+    [SerializeField] public float destroyPercentage;
+    private float randomDestroyPercentage;
 
     private float alpha;
 
@@ -14,11 +16,13 @@ public class FrontIce : MonoBehaviour
     {
         renderer = this.gameObject.GetComponent<Renderer>();
         alpha = 1f;
+        randomDestroyPercentage = Random.Range(0f, 1f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // 투명도가 0이 되면 빙하 부수기.
         if (alpha <= 0)
         {
             Destroy(this.gameObject);
@@ -27,7 +31,7 @@ public class FrontIce : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "Player")
+        if (collider.tag == "Player" && randomDestroyPercentage <= destroyPercentage)
         {            
             StartCoroutine("FadeAndDestroy");
         }        
@@ -44,17 +48,19 @@ public class FrontIce : MonoBehaviour
             else
             {
                 alpha = f;
-            }            
+            }
+            // 투명도 감소
             Color c = renderer.material.color;
             c.a = alpha;
             renderer.material.color = c;
 
+
+            // 빙하 하강.
             transform.position = new Vector3(
                 transform.position.x,
                 transform.position.y - (1f * Time.deltaTime),
                 transform.position.y);
             yield return null;
-        }        
-        
+        }                
     }
 }
