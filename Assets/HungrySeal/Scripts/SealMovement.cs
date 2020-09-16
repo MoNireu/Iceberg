@@ -18,6 +18,8 @@ public class SealMovement : MonoBehaviour
     [SerializeField]
     private float dashForce = 10000f;
     [SerializeField]
+    private float rotateSpeed = 1500f;
+    [SerializeField]
     private float originalDrag = 2f;
 
 
@@ -62,8 +64,8 @@ public class SealMovement : MonoBehaviour
         // 조이스틱 입력
         float inputX = joystick.Horizontal;
         float inputY = joystick.Vertical;
-        inputX = Input.GetAxis("Horizontal");
-        inputY = Input.GetAxis("Vertical");
+        //inputX = Input.GetAxis("Horizontal");
+        //inputY = Input.GetAxis("Vertical");
 
 
         // 대쉬 기능.
@@ -80,7 +82,7 @@ public class SealMovement : MonoBehaviour
          
         // 횡 이동
         playerRd.AddForce(inputX * horizontalForce * Time.deltaTime, 0, 0);
-        horizontalRotate += 10f * inputX;
+        horizontalRotate += rotateSpeed * inputX * Time.deltaTime;
         horizontalRotate = Mathf.Clamp(horizontalRotate, -90f, 90f);
         transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
 

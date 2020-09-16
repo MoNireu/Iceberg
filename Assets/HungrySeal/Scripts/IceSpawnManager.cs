@@ -11,8 +11,8 @@ public class IceSpawnManager : MonoBehaviour
     private float randomSelectValue;
     private float randomDelayTime;
 
-    private float delayTimeMin = 7f;
-    private float delayTimeMax = 15f;
+    private float delayTimeMin = 10f;
+    private float delayTimeMax = 20f;
 
 
     // Start is called before the first frame update
