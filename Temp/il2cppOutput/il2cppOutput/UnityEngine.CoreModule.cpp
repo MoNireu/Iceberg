@@ -912,6 +912,7 @@ IL2CPP_EXTERN_C const uint32_t Mathf_InverseLerp_mCD2E6F9ADCFFB40EB7D3086E444DF2
 IL2CPP_EXTERN_C const uint32_t Mathf_Lerp_m8A2A50B945F42D579EDF44D5EE79E85A4DA59616_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Mathf_Log_m84245464CED9280D38CF048C640D7A01259679A0_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Mathf_Log_mF7F3624FA030AB57AD8C1F4CAF084B2DCC99897A_MetadataUsageId;
+IL2CPP_EXTERN_C const uint32_t Mathf_MoveTowards_mE0689B09DD10CD59A01EE9E24880A5BA495FD321_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Mathf_Pow_mA38993C7C8CCFCB94EE3F61236C79C45E878673E_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Mathf_Repeat_mBAB712BA039DF58DBB1B31B669E502C54F3F13CE_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Mathf_RoundToInt_m56850BDF60FF9E3441CE57E5EFEFEF36EDCDE6DD_MetadataUsageId;
@@ -13427,6 +13428,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MaterialPropertyBlock_DestroyImpl_mEB8A5
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Math_Pow_mC2C8700DAAD1316AA457A1D271F78CDF0D61AC2F (double ___x0, double ___y1, const RuntimeMethod* method);
 // System.Double System.Math::Log(System.Double,System.Double)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Math_Log_m05D6B4CE873ABBA5D8E39F798BBB67D49ABECE2C (double ___a0, double ___newBase1, const RuntimeMethod* method);
+// System.Single UnityEngine.Mathf::Sign(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Mathf_Sign_m01716387C82B9523CFFADED7B2037D75F57FE2FB (float ___f0, const RuntimeMethod* method);
 // System.Single UnityEngine.Mathf::Clamp(System.Single,System.Single,System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Mathf_Clamp_m2416F3B785C8F135863E3D17E5B0CB4174797B87 (float ___value0, float ___min1, float ___max2, const RuntimeMethod* method);
 // System.Void UnityEngine.Matrix4x4::.ctor(UnityEngine.Vector4,UnityEngine.Vector4,UnityEngine.Vector4,UnityEngine.Vector4)
@@ -30460,6 +30463,54 @@ IL_0010:
 	{
 		float L_5 = V_0;
 		return L_5;
+	}
+}
+// System.Single UnityEngine.Mathf::MoveTowards(System.Single,System.Single,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Mathf_MoveTowards_mE0689B09DD10CD59A01EE9E24880A5BA495FD321 (float ___current0, float ___target1, float ___maxDelta2, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (Mathf_MoveTowards_mE0689B09DD10CD59A01EE9E24880A5BA495FD321_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	bool V_0 = false;
+	float V_1 = 0.0f;
+	{
+		float L_0 = ___target1;
+		float L_1 = ___current0;
+		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
+		float L_2 = fabsf(((float)il2cpp_codegen_subtract((float)L_0, (float)L_1)));
+		float L_3 = ___maxDelta2;
+		V_0 = (bool)((((int32_t)((!(((float)L_2) <= ((float)L_3)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
+		bool L_4 = V_0;
+		if (!L_4)
+		{
+			goto IL_0017;
+		}
+	}
+	{
+		float L_5 = ___target1;
+		V_1 = L_5;
+		goto IL_0026;
+	}
+
+IL_0017:
+	{
+		float L_6 = ___current0;
+		float L_7 = ___target1;
+		float L_8 = ___current0;
+		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
+		float L_9 = Mathf_Sign_m01716387C82B9523CFFADED7B2037D75F57FE2FB(((float)il2cpp_codegen_subtract((float)L_7, (float)L_8)), /*hidden argument*/NULL);
+		float L_10 = ___maxDelta2;
+		V_1 = ((float)il2cpp_codegen_add((float)L_6, (float)((float)il2cpp_codegen_multiply((float)L_9, (float)L_10))));
+		goto IL_0026;
+	}
+
+IL_0026:
+	{
+		float L_11 = V_1;
+		return L_11;
 	}
 }
 // System.Boolean UnityEngine.Mathf::Approximately(System.Single,System.Single)

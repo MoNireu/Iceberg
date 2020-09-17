@@ -53,7 +53,6 @@
 		<type fullname="UnityEngine.RectTransform" preserve="nothing"/>
 		<type fullname="UnityEngine.Motion" preserve="nothing"/>
 		<type fullname="UnityEngine.CanvasRenderer" preserve="nothing"/>
-		<type fullname="UnityEngine.Cubemap" preserve="nothing"/>
 		<type fullname="UnityEngine.LightmapSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.LightingSettings" preserve="nothing"/>
 	</assembly>

@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderer: {fileID: 0}
-  destroyPercentage: 1
+  destroyPercentage: 0.5
 --- !u!114 &4815537381370357826
 MonoBehaviour:
   m_ObjectHideFlags: 0

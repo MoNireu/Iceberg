@@ -59,7 +59,12 @@ public class SealMovement : MonoBehaviour
 
     //// Update is called once per frame
     void Update()
-    {                
+    {
+        // Z축 밀림방지.
+        transform.position = new Vector3(
+            transform.position.x,
+            transform.position.y,
+            0);
 
         // 조이스틱 입력
         float inputX = joystick.Horizontal;
@@ -70,7 +75,7 @@ public class SealMovement : MonoBehaviour
        
 
             // 대쉬 기능.
-            if (Input.GetKeyDown(KeyCode.Space) || joybutton.Pressed)
+        if (Input.GetKeyDown(KeyCode.Space) || joybutton.Pressed)
         {
             horizontalForce = dashForce;
             verticalForce = dashForce;

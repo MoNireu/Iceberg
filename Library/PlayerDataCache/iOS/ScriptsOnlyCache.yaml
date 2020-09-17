@@ -52,8 +52,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -104,8 +106,6 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
-      Script: {instanceID: 0}
-    - Class: 89
       Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
@@ -758,7 +758,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 1a9e863cea97c14a871d179ff226c1b9
+      Hash: 92fc0d1b39070f71373a03d0169b5e34
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FrontIceMovment
@@ -1052,7 +1052,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerValue
   - hash:
       serializedVersion: 2
-      Hash: 7249f38156c37b74bf692e6c1ccd7fe7
+      Hash: 14406625c157409f225bdad16d835914
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NpcSpawnManager
@@ -1214,7 +1214,7 @@ ScriptsOnlyBuild:
     className: TestRunCallbackListener
   - hash:
       serializedVersion: 2
-      Hash: d05a67d0991f7dcaf07d6fa4eb9e172e
+      Hash: 5cfa3556ed9cfd31c768835b4e444bee
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NpcMovement
