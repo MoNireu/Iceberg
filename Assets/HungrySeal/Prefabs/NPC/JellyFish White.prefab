@@ -4263,7 +4263,7 @@ MonoBehaviour:
   randomHorizontalRange: 50
   randomVerticalRange: -50
   speed: 2
-  delayTime: 2
+  moveDelayTime: 2
 --- !u!1 &7586271052330733858
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class NpcMovement : MonoBehaviour
 {
-    [SerializeField] private float randomHorizontalRange;
-    [SerializeField] private float randomVerticalRange;
-    [SerializeField] private float speed = 2;
-    [SerializeField] private float moveDelayTime;
+    [SerializeField] private float randomHorizontalRange = 50;
+    [SerializeField] private float randomVerticalRange = -50;
+    [SerializeField] private float speed;
+    [SerializeField] private float moveDelayTime;    
     private float moveDelaytimer = 0;
 
 
-    private float defaultScale;
+    private Vector3 trashRotation;
+    private float trashRotateSpeed;
+    
     private bool isMoveComplete;
     private Vector3 targetPosition;
+    
 
 
     void Start()
     {
-        targetPosition = getNewRandomPosition();
-        defaultScale = transform.localScale.x;
+        targetPosition = getNewRandomPosition();        
+        trashRotation = new Vector3(0, 0, 0);
+        trashRotateSpeed = Random.Range(60f, 120f);
     }
 
 
@@ -60,17 +64,33 @@ public class NpcMovement : MonoBehaviour
             targetPosition,
             speed * Time.deltaTime);
 
-        float angle = Mathf.Atan2(
-            targetPosition.y - currentPosition.y,
-            targetPosition.x - currentPosition.x) * 180 / Mathf.PI;
-
+      
         if (gameObject.tag == "Fish")
         {
             changeHeading();
         }
         else if (gameObject.tag == "JellyFish")
         {
+            float angle = Mathf.Atan2(
+            targetPosition.y - currentPosition.y,
+            targetPosition.x - currentPosition.x) * 180 / Mathf.PI;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+        }
+        else // trash
+        {
+            Debug.Log("trashRotation = " + trashRotation);
+            if (trashRotation.x >= 360) // Reset trashRotation
+            {
+                trashRotation = new Vector3(0, 0, 0);
+            }
+
+            trashRotation = new Vector3(
+                trashRotateSpeed * Time.deltaTime + trashRotation.x,
+                trashRotateSpeed * Time.deltaTime + trashRotation.y,
+                trashRotateSpeed * Time.deltaTime + trashRotation.z
+                );
+            
+            transform.rotation = Quaternion.Euler(trashRotation);
         }
 
     }
@@ -93,14 +113,19 @@ public class NpcMovement : MonoBehaviour
         float currentX = transform.position.x;
         float targetX = targetPosition.x;
 
-        if (currentX < targetX) //우측으로 이동
+        if (currentX < targetX) //우측으로 이동시
         {
-            transform.localScale = new Vector3(defaultScale, defaultScale, defaultScale);
+            transform.localScale = new Vector3(
+                transform.localScale.x,
+                transform.localScale.x,
+                transform.localScale.x);
         }
-        else //좌측으로 이동
+        else //좌측으로 이동시 
         {
-            transform.localScale = new Vector3(defaultScale, defaultScale, -defaultScale);
+            transform.localScale = new Vector3(
+                transform.localScale.x,
+                transform.localScale.x,
+                -transform.localScale.x);
         }
-    }
-
+    }   
 }

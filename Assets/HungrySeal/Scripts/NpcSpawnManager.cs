@@ -8,23 +8,30 @@ public class NpcSpawnManager : MonoBehaviour
     public GameObject jellyBlue;
     public GameObject jellyOrange;
     public GameObject jellyWhite;
+    public GameObject waterBottle;
+    public GameObject beer;
+    public GameObject soju;
+    public GameObject cup;
+    public GameObject toiletPaper;
 
-
-    private int maxFishSpawnAmount = 30; // 30
-    private int currentFishAmount;
-
-    private int maxJellyFishSpawnAmount = 15; //15
-    private int currentJellyFishAmount;    
     private GameObject randomJellyFish;
-
+    private GameObject randomTrash;
 
 
     private float minSpawnXValue = -40f;
-    private float maxSpawnXValue = 40f; //40
-    private float minSpawnYValue = -40; //-40
+    private float maxSpawnXValue = 40f;
+    private float minSpawnYValue = -40;
     private float maxSpawnYValue = -10f;
 
-    
+    private int maxFishSpawnAmount = 30;
+    private int currentFishAmount;
+
+    private int maxJellyFishSpawnAmount = 15;
+    private int currentJellyFishAmount;
+
+    private int maxTrashSpawnAmount = 15;
+    private int currentTrashAmount;
+
 
 
     // Start is called before the first frame update
@@ -32,6 +39,7 @@ public class NpcSpawnManager : MonoBehaviour
     {
         currentFishAmount = GameObject.FindGameObjectsWithTag("Fish").Length;
         currentJellyFishAmount = GameObject.FindGameObjectsWithTag("JellyFish").Length;
+        currentTrashAmount = GameObject.FindGameObjectsWithTag("Trash").Length;
     }
 
     // Update is called once per frame
@@ -39,13 +47,13 @@ public class NpcSpawnManager : MonoBehaviour
     {
         currentFishAmount = GameObject.FindGameObjectsWithTag("Fish").Length;
         currentJellyFishAmount = GameObject.FindGameObjectsWithTag("JellyFish").Length;
+        currentTrashAmount = GameObject.FindGameObjectsWithTag("Trash").Length;
 
         // Fish 생성
         if (maxFishSpawnAmount > currentFishAmount)
         {
             createNpc(fish);
         }
-
 
         // JellyFish 생성
         if (maxJellyFishSpawnAmount > currentJellyFishAmount)
@@ -54,8 +62,12 @@ public class NpcSpawnManager : MonoBehaviour
             createNpc(randomJellyFish);
         }
 
-
-        Debug.Log("Fish amount = " + currentFishAmount);
+        // Trash 생성
+        if (maxTrashSpawnAmount > currentTrashAmount)
+        {
+            selectRandomTrash();
+            createNpc(randomTrash);
+        }
     }
 
 
@@ -79,7 +91,7 @@ public class NpcSpawnManager : MonoBehaviour
 
     private void selectRandomJellyFish()
     {
-        float randomJellyFishValue = Random.Range(0f, 0.9f);
+        float randomJellyFishValue = Random.Range(0.1f, 0.9f);
         if (randomJellyFishValue <= 0.3f)
         {
             randomJellyFish = jellyBlue;
@@ -93,5 +105,31 @@ public class NpcSpawnManager : MonoBehaviour
             randomJellyFish = jellyWhite;
         }
     }
-    
+
+
+    private void selectRandomTrash()
+    {
+        float randomTrashValue = Random.Range(0.1f, 1f);
+        if (randomTrashValue <= 0.2f)
+        {
+            randomTrash = waterBottle;
+        }
+        else if (randomTrashValue <= 0.4f)
+        {
+            randomTrash = beer;
+        }
+        else if (randomTrashValue <= 0.6f)
+        {
+            randomTrash = soju;
+        }
+        else if (randomTrashValue <= 0.8f)
+        {
+            randomTrash = cup;
+        }
+        else
+        {
+            randomTrash = toiletPaper;
+        }
+    }
+
 }

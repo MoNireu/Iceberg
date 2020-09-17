@@ -9,6 +9,7 @@ TagManager:
   - DestroyIce
   - Fish
   - JellyFish
+  - Trash
   layers:
   - Default
   - TransparentFX

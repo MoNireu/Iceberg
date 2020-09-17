@@ -19,16 +19,20 @@ public class NpcDestroyManager : MonoBehaviour
     private void OnTriggerEnter(Collider npc)
     {
         if (npc.tag == "Fish")
-        {
-            Debug.Log("NPC Collide");
-            // 점수를 올리는 함수.
+        {         
+            // 점수 함수.
             Destroy(npc.gameObject);
         }
 
         if (npc.tag == "JellyFish")
-        {
-            Debug.Log("NPC Collide");
-            // 점수를 올리는 함수.
+        {            
+            // 점수 함수.
+            Destroy(npc.gameObject);
+        }
+
+        if (npc.tag == "Trash")
+        {            
+            // 점수 함수.
             Destroy(npc.gameObject);
         }
     }
