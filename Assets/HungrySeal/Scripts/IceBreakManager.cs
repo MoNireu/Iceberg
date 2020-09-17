@@ -38,7 +38,7 @@ public class IceBreakManager : MonoBehaviour
 
         if (collider.tag == "DestroyIce")
         {
-            StartCoroutine("FadeAndDestroy");
+            StartCoroutine("FadeAndDestroy");            
         }
     }
 

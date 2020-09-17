@@ -7,8 +7,8 @@ public class NpcMovement : MonoBehaviour
     [SerializeField] private float randomHorizontalRange;
     [SerializeField] private float randomVerticalRange;
     [SerializeField] private float speed = 2;
-    [SerializeField] private float delayTime;
-    private float timer = 0;
+    [SerializeField] private float moveDelayTime;
+    private float moveDelaytimer = 0;
 
 
     private float defaultScale;
@@ -27,18 +27,17 @@ public class NpcMovement : MonoBehaviour
     {
         if (isMoveComplete)
         {
-            timer += Time.deltaTime;
-            if (timer > delayTime)
+            moveDelaytimer += Time.deltaTime;
+            if (moveDelaytimer > moveDelayTime)
             {
-                targetPosition = getNewRandomPosition();
-                changHeading();
+                targetPosition = getNewRandomPosition();                
 
-                timer = 0f; //타이머 초기화
+                moveDelaytimer = 0f; //타이머 초기화
             }
         }
         else
-        {
-            goToNewPosition();
+        {            
+            goToNewPosition();            
         }
 
         checkMoveComplete();
@@ -65,7 +64,11 @@ public class NpcMovement : MonoBehaviour
             targetPosition.y - currentPosition.y,
             targetPosition.x - currentPosition.x) * 180 / Mathf.PI;
 
-        if (gameObject.tag == "JellyFish")
+        if (gameObject.tag == "Fish")
+        {
+            changeHeading();
+        }
+        else if (gameObject.tag == "JellyFish")
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
         }
@@ -85,7 +88,7 @@ public class NpcMovement : MonoBehaviour
     }
 
 
-    void changHeading()
+    void changeHeading()
     {
         float currentX = transform.position.x;
         float targetX = targetPosition.x;

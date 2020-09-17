@@ -43,7 +43,8 @@ public class SealMovement : MonoBehaviour
     public float groundGravity = -20f;
     [SerializeField]
     public float oceanGravity = -1f;
-    [SerializeField]    
+    [SerializeField]
+    
 
 
     //// Start is called before the first frame update
@@ -58,8 +59,7 @@ public class SealMovement : MonoBehaviour
 
     //// Update is called once per frame
     void Update()
-    {
-        //isGround = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);        
+    {                
 
         // 조이스틱 입력
         float inputX = joystick.Horizontal;

@@ -10,18 +10,18 @@ public class NpcSpawnManager : MonoBehaviour
     public GameObject jellyWhite;
 
 
-    private int maxFishSpawnAmount = 30;
+    private int maxFishSpawnAmount = 30; // 30
     private int currentFishAmount;
 
-    private int maxJellyFishSpawnAmount = 15;
+    private int maxJellyFishSpawnAmount = 15; //15
     private int currentJellyFishAmount;    
     private GameObject randomJellyFish;
 
 
 
     private float minSpawnXValue = -40f;
-    private float maxSpawnXValue = 40f;
-    private float minSpawnYValue = -40f;
+    private float maxSpawnXValue = 40f; //40
+    private float minSpawnYValue = -40; //-40
     private float maxSpawnYValue = -10f;
 
     
@@ -66,13 +66,14 @@ public class NpcSpawnManager : MonoBehaviour
         Vector3 randomSpawnPosition = new Vector3(randomXValue, randomYValue, 0);
 
         Vector3 defaultRotation = new Vector3(0f, 0f, 0f); ;
+
         // 이부분 나중에 enum으로 바꿀것
         if (npcGameObject == fish)
         {
             defaultRotation = new Vector3(0f, 90f, 0f);
-        }       
+        }
 
-        Instantiate(npcGameObject, randomSpawnPosition, Quaternion.Euler(defaultRotation));
+        Instantiate(npcGameObject, randomSpawnPosition, Quaternion.Euler(defaultRotation));             
     }
 
 
