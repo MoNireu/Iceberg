@@ -10,6 +10,7 @@ public class IceBreakManager : MonoBehaviour
     private float randomDestroyPercentage;
 
     private float alpha;
+    private int hitCount;
 
     // Start is called before the first frame update
     void Start()
@@ -17,36 +18,66 @@ public class IceBreakManager : MonoBehaviour
         renderer = this.gameObject.GetComponent<Renderer>();
         alpha = 1f;
         randomDestroyPercentage = Random.Range(0f, 1f);
+        hitCount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // 투명도가 0이 되면 빙하 부수기.
-        if (alpha <= 0)
+
+        if (hitCount != 0)
         {
             Destroy(this.gameObject);
         }
+
+
+        //// 투명도가 0이 되면 빙하 부수기.
+        //if (alpha <= 0)
+        //{
+        //    Destroy(this.gameObject);
+        //}
     }
 
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.tag == "Player" && randomDestroyPercentage <= destroyPercentage)
         {
-            StartCoroutine("FadeAndDestroy");
+            //this.gameObject.GetComponent<Collider>().enabled = false;
+            //StartCoroutine("FadeAndDestroy");
+            hitCount += 1;
         }
 
         if (collider.tag == "DestroyIce")
         {
-            StartCoroutine("FadeAndDestroy");            
-        }
+            //this.gameObject.GetComponent<Collider>().enabled = false;
+            //StartCoroutine("FadeAndDestroy");
+            hitCount += 1;
+        }        
     }
 
-    IEnumerator FadeAndDestroy()
+
+    private void fadeAndDestroy()
+    {
+        alpha = Mathf.MoveTowards(alpha, 0f, -3f * Time.deltaTime);
+
+        if (alpha == 0)
+        {
+            Destroy(this.gameObject);
+        }
+
+        Color c = renderer.material.color;
+        c.a = alpha;
+        renderer.material.color = c;
+    }
+
+
+
+
+    IEnumerator FadeAndDestroy1()
     {
         for (float f = 1; f >= 0; f -= 3f * Time.deltaTime)
         {
-            if (f <= 0.05)
+            if (f <= 0.1)
             {
                 alpha = 0;
             }
@@ -59,13 +90,14 @@ public class IceBreakManager : MonoBehaviour
             c.a = alpha;
             renderer.material.color = c;
 
-
             // 빙하 하강.
             transform.position = new Vector3(
                 transform.position.x,
                 transform.position.y - (1f * Time.deltaTime),
                 transform.position.y);
+
             yield return null;
         }
+        
     }
 }
