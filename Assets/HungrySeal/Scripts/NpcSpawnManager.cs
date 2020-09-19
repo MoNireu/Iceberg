@@ -13,9 +13,26 @@ public class NpcSpawnManager : MonoBehaviour
     public GameObject soju;
     public GameObject cup;
     public GameObject toiletPaper;
+    public GameObject clock;
 
     private GameObject randomJellyFish;
     private GameObject randomTrash;
+
+    [SerializeField]
+    private int maxFishSpawnAmount = 30;
+    private int currentFishAmount;
+
+    [SerializeField]
+    private int maxJellyFishSpawnAmount = 15;
+    private int currentJellyFishAmount;
+
+    [SerializeField]
+    private int maxTrashSpawnAmount = 15;
+    private int currentTrashAmount;
+
+    [SerializeField]
+    private int maxClockSpawnAmount = 3;
+    private int currentClockAmount;
 
 
     private float minSpawnXValue = -40f;
@@ -23,31 +40,16 @@ public class NpcSpawnManager : MonoBehaviour
     private float minSpawnYValue = -40;
     private float maxSpawnYValue = -10f;
 
-    private int maxFishSpawnAmount = 30;
-    private int currentFishAmount;
 
-    private int maxJellyFishSpawnAmount = 15;
-    private int currentJellyFishAmount;
-
-    private int maxTrashSpawnAmount = 15;
-    private int currentTrashAmount;
-
-
-
-    // Start is called before the first frame update
+    
     void Start()
     {
-        currentFishAmount = GameObject.FindGameObjectsWithTag("Fish").Length;
-        currentJellyFishAmount = GameObject.FindGameObjectsWithTag("JellyFish").Length;
-        currentTrashAmount = GameObject.FindGameObjectsWithTag("Trash").Length;
+        updateCurrentObjAmount();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        currentFishAmount = GameObject.FindGameObjectsWithTag("Fish").Length;
-        currentJellyFishAmount = GameObject.FindGameObjectsWithTag("JellyFish").Length;
-        currentTrashAmount = GameObject.FindGameObjectsWithTag("Trash").Length;
+        updateCurrentObjAmount();
 
         // Fish 생성
         if (maxFishSpawnAmount > currentFishAmount)
@@ -68,6 +70,20 @@ public class NpcSpawnManager : MonoBehaviour
             selectRandomTrash();
             createNpc(randomTrash);
         }
+
+        // Clock 생성
+        if (maxClockSpawnAmount > currentClockAmount)
+        {            
+            createNpc(clock);
+        }
+    }
+
+    private void updateCurrentObjAmount()
+    {
+        currentFishAmount = GameObject.FindGameObjectsWithTag("Fish").Length;
+        currentJellyFishAmount = GameObject.FindGameObjectsWithTag("JellyFish").Length;
+        currentTrashAmount = GameObject.FindGameObjectsWithTag("Trash").Length;
+        currentClockAmount = GameObject.FindGameObjectsWithTag("Clock").Length;
     }
 
 
@@ -83,6 +99,10 @@ public class NpcSpawnManager : MonoBehaviour
         if (npcGameObject == fish)
         {
             defaultRotation = new Vector3(0f, 90f, 0f);
+        }
+        if (npcGameObject == clock)
+        {
+            defaultRotation = new Vector3(0f, -107.5f, 0f);
         }
 
         Instantiate(npcGameObject, randomSpawnPosition, Quaternion.Euler(defaultRotation));             

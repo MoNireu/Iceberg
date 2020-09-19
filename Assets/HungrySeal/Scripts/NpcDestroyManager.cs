@@ -18,22 +18,25 @@ public class NpcDestroyManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider npc)
     {
-        if (npc.tag == "Fish")
-        {         
-            // 점수 함수.
-            Destroy(npc.gameObject);
-        }
+        switch (npc.tag)
+        {
+            case "Fish":
+                // 점수 함수.
+                Destroy(npc.gameObject);
+                break;
+            case "JellyFish":
+                // 점수 함수.
+                Destroy(npc.gameObject);
+                break;
+            case "Trash":
+                // 점수 함수.
+                Destroy(npc.gameObject);
+                break;
+            case "Clock":
+                // 점수 함수.
+                Destroy(npc.gameObject);
+                break;
 
-        if (npc.tag == "JellyFish")
-        {            
-            // 점수 함수.
-            Destroy(npc.gameObject);
-        }
-
-        if (npc.tag == "Trash")
-        {            
-            // 점수 함수.
-            Destroy(npc.gameObject);
-        }
+        }        
     }
 }

@@ -8,36 +8,21 @@
       <File FileName="Assets/HungrySeal/Scripts/IceBreakManager.cs" />
       <File FileName="Assets/HungrySeal/Scripts/FrontIceMovment.cs" />
       <File FileName="Assets/HungrySeal/Scripts/IceSpawnManager.cs" />
-      <File FileName="Assets/HungrySeal/Scripts/NpcDestroyManager.cs" />
-      <File FileName="Assets/HungrySeal/Scripts/NpcSpawnManager.cs" />
-      <File FileName="Assets/HungrySeal/Scripts/NpcMovement.cs" Line="28" Column="28" />
+      <File FileName="Assets/HungrySeal/Scripts/NpcDestroyManager.cs" Line="36" Column="26" />
+      <File FileName="Assets/HungrySeal/Scripts/NpcSpawnManager.cs" Line="41" Column="41" />
+      <File FileName="Assets/HungrySeal/Scripts/NpcMovement.cs" Line="56" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Iceberg" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Assets" expanded="True">
-                <Node name="polyperfect 2" expanded="True">
-                  <Node name="Common" expanded="True">
-                    <Node name="Wander Script" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
-              <Node name="HungrySeal" expanded="True">
-                <Node name="Scripts" expanded="True">
-                  <Node name="NpcMovement.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
+          <Node name="Iceberg" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4a615acb-2326-48fe-9e4e-2b6adfac5f3e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8bdb918a-0f7b-4c42-83ca-cf7e4f4fcfa7" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
