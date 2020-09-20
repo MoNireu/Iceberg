@@ -1,28 +1,37 @@
 ﻿<Properties StartupConfiguration="{59F22D1B-8E80-4687-1155-7AAD6753F6A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HungrySeal/Scripts/NpcMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HungrySeal/GameManager.cs">
     <Files>
-      <File FileName="Assets/HungrySeal/Scripts/SealMovement.cs" Line="33" Column="27" />
+      <File FileName="Assets/HungrySeal/Scripts/SealMovement.cs" Line="74" Column="44" />
       <File FileName="Assets/HungrySeal/Scripts/Water.cs" />
       <File FileName="Assets/HungrySeal/Scripts/MainCameraMovement.cs" />
       <File FileName="Assets/HungrySeal/Scripts/FishMovement.cs" />
       <File FileName="Assets/HungrySeal/Scripts/IceBreakManager.cs" />
       <File FileName="Assets/HungrySeal/Scripts/FrontIceMovment.cs" />
       <File FileName="Assets/HungrySeal/Scripts/IceSpawnManager.cs" />
-      <File FileName="Assets/HungrySeal/Scripts/NpcDestroyManager.cs" Line="36" Column="26" />
-      <File FileName="Assets/HungrySeal/Scripts/NpcSpawnManager.cs" Line="41" Column="41" />
-      <File FileName="Assets/HungrySeal/Scripts/NpcMovement.cs" Line="56" Column="1" />
+      <File FileName="Assets/HungrySeal/Scripts/NpcDestroyManager.cs" />
+      <File FileName="Assets/HungrySeal/Scripts/NpcSpawnManager.cs" />
+      <File FileName="Assets/HungrySeal/Scripts/NpcMovement.cs" Line="103" Column="49" />
+      <File FileName="Assets/HungrySeal/GameManager.cs" Line="164" Column="1" />
+      <File FileName="Assets/HungrySeal/Scripts/UIManger.cs" Line="49" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Iceberg" expanded="True" selected="True" />
+          <Node name="Iceberg" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="HungrySeal" expanded="True">
+                <Node name="Scripts" expanded="True" />
+                <Node name="GameManager.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8bdb918a-0f7b-4c42-83ca-cf7e4f4fcfa7" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b605031c-17d2-412a-9c65-31bf49847488" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

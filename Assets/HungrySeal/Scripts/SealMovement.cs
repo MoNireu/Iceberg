@@ -70,42 +70,41 @@ public class SealMovement : MonoBehaviour
         float inputX = joystick.Horizontal;
         float inputY = joystick.Vertical;
 
-        //inputX = Input.GetAxis("Horizontal");
-        //inputY = Input.GetAxis("Vertical");
-       
-
-            // 대쉬 기능.
-        if (Input.GetKeyDown(KeyCode.Space) || joybutton.Pressed)
-        {
-            horizontalForce = dashForce;
-            verticalForce = dashForce;
-            Debug.Log("Pressed!");
-        }else
-        {
-            horizontalForce = originalHorizontalForce;
-            verticalForce = originalVerticalForce;
-        }
-         
-        // 횡 이동
-        playerRd.AddForce(inputX * horizontalForce * Time.deltaTime, 0, 0);
-        horizontalRotate += rotateSpeed * inputX * Time.deltaTime;
-        horizontalRotate = Mathf.Clamp(horizontalRotate, -90f, 90f);
-        transform.rotation = Quaternion.Euler(this.verticalRotate, horizontalRotate, 0);
-
+        inputX = Input.GetAxis("Horizontal");
+        inputY = Input.GetAxis("Vertical");
 
 
         // 물일 경우
         if (isWater)
         {
+            GameManager.instance.changePlayerLocation(PlayerLocation.water);
+
             horizontalForce = originalHorizontalForce; // 횡 입력값 복구.
             playerRd.drag = originalDrag; //저항값 복구.
 
             // 피치 결정.
             setSealPitch(inputX, inputY);
 
+            // 대쉬 기능.
+            if (Input.GetKeyDown(KeyCode.Space) || joybutton.Pressed)
+            {
+                GameManager.instance.playerDashed();
+
+                playerRd.AddForce(
+                    inputX * dashForce * Time.deltaTime,
+                    inputY * dashForce * Time.deltaTime, 0);                
+                //horizontalForce = dashForce;
+                //verticalForce = dashForce;
+            }
+            //else
+            //{
+            //    horizontalForce = originalHorizontalForce;
+            //    verticalForce = originalVerticalForce;
+            //}
+
             // 종 이동
             playerRd.AddForce(0, inputY * verticalForce * Time.deltaTime, 0);            
-            transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);            
+            transform.rotation = Quaternion.Euler(verticalRotate, horizontalRotate, 0);
 
             // 종 입력이 없을 경우
             if (inputY == 0) // Pitch 중앙 정렬.
@@ -117,6 +116,8 @@ public class SealMovement : MonoBehaviour
         }
         else if (isGround) // 땅일 경우
         {
+            GameManager.instance.changePlayerLocation(PlayerLocation.ground);
+
             horizontalForce = originalHorizontalForce; // 횡 입력값 복구.
             groundCenterPitch();
             playerRd.drag = 1f;
@@ -124,11 +125,19 @@ public class SealMovement : MonoBehaviour
 
         else if (!isGround && !isWater)// 공중일 경우
         {
+            GameManager.instance.changePlayerLocation(PlayerLocation.air);
+
             Debug.Log("Air!");
             horizontalForce = 1000f; // 횡 입력값 감소.
             playerRd.drag = 1f;
             downPitch(); // Pitch 하강.
-        }            
+        }
+
+        // 횡 이동
+        playerRd.AddForce(inputX * horizontalForce * Time.deltaTime, 0, 0);
+        horizontalRotate += rotateSpeed * inputX * Time.deltaTime;
+        horizontalRotate = Mathf.Clamp(horizontalRotate, -90f, 90f);
+        transform.rotation = Quaternion.Euler(this.verticalRotate, horizontalRotate, 0);
     }
 
 
