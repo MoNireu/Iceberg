@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - FixedJoystick
     - FrontIceMovment
+    - GameManager
     - IceBreakManager
     - IceSpawnManager
     - Joybutton
@@ -13,6 +14,7 @@ ScriptsOnlyBuild:
     - PolyPerfect.Animal_AIStats
     - PolyPerfect.Animal_WanderScript
     - SealMovement
+    - UIManger
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -52,10 +54,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -106,6 +106,8 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
       Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
@@ -174,53 +176,57 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14060}
     - Class: 114
-      Script: {instanceID: 14306}
+      Script: {instanceID: 14072}
     - Class: 114
-      Script: {instanceID: 14632}
+      Script: {instanceID: 14308}
     - Class: 114
-      Script: {instanceID: 14700}
+      Script: {instanceID: 14634}
     - Class: 114
-      Script: {instanceID: 14720}
+      Script: {instanceID: 14702}
     - Class: 114
-      Script: {instanceID: 14834}
+      Script: {instanceID: 14722}
     - Class: 114
-      Script: {instanceID: 14868}
+      Script: {instanceID: 14836}
     - Class: 114
-      Script: {instanceID: 14910}
+      Script: {instanceID: 14870}
     - Class: 114
-      Script: {instanceID: 14918}
+      Script: {instanceID: 14912}
     - Class: 114
-      Script: {instanceID: 15018}
+      Script: {instanceID: 14920}
     - Class: 114
-      Script: {instanceID: 15256}
+      Script: {instanceID: 14946}
     - Class: 114
-      Script: {instanceID: 15280}
+      Script: {instanceID: 15022}
     - Class: 114
-      Script: {instanceID: 15368}
+      Script: {instanceID: 15260}
     - Class: 114
-      Script: {instanceID: 15390}
+      Script: {instanceID: 15284}
     - Class: 114
-      Script: {instanceID: 15650}
+      Script: {instanceID: 15372}
     - Class: 114
-      Script: {instanceID: 15756}
+      Script: {instanceID: 15394}
     - Class: 114
-      Script: {instanceID: 15850}
+      Script: {instanceID: 15654}
     - Class: 114
-      Script: {instanceID: 15902}
+      Script: {instanceID: 15760}
     - Class: 114
-      Script: {instanceID: 16108}
+      Script: {instanceID: 15854}
     - Class: 114
-      Script: {instanceID: 16122}
+      Script: {instanceID: 15906}
     - Class: 114
-      Script: {instanceID: 16124}
+      Script: {instanceID: 16112}
     - Class: 114
-      Script: {instanceID: 16158}
+      Script: {instanceID: 16126}
     - Class: 114
-      Script: {instanceID: 16186}
+      Script: {instanceID: 16128}
     - Class: 114
-      Script: {instanceID: 16322}
+      Script: {instanceID: 16162}
     - Class: 114
-      Script: {instanceID: 16330}
+      Script: {instanceID: 16190}
+    - Class: 114
+      Script: {instanceID: 16326}
+    - Class: 114
+      Script: {instanceID: 16334}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -764,6 +770,12 @@ ScriptsOnlyBuild:
     className: FrontIceMovment
   - hash:
       serializedVersion: 2
+      Hash: 3263edadf221ba58390ace6c794bee3a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -938,6 +950,12 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerButton
   - hash:
       serializedVersion: 2
+      Hash: 873b4d1fd0eae3a6e712b223a41f9064
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIManger
+  - hash:
+      serializedVersion: 2
       Hash: 597cfde2e60b842b3acbd2961ff0631b
     assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
     namespaceName: UnityEngine.Rendering.Universal
@@ -1052,7 +1070,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerValue
   - hash:
       serializedVersion: 2
-      Hash: 14406625c157409f225bdad16d835914
+      Hash: 361e5a8132a4d44d74e7ec9651b5c412
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NpcSpawnManager

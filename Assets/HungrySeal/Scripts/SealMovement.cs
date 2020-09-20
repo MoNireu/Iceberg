@@ -70,8 +70,8 @@ public class SealMovement : MonoBehaviour
         float inputX = joystick.Horizontal;
         float inputY = joystick.Vertical;
 
-        inputX = Input.GetAxis("Horizontal");
-        inputY = Input.GetAxis("Vertical");
+        //inputX = Input.GetAxis("Horizontal");
+        //inputY = Input.GetAxis("Vertical");
 
 
         // 물일 경우
@@ -92,15 +92,8 @@ public class SealMovement : MonoBehaviour
 
                 playerRd.AddForce(
                     inputX * dashForce * Time.deltaTime,
-                    inputY * dashForce * Time.deltaTime, 0);                
-                //horizontalForce = dashForce;
-                //verticalForce = dashForce;
-            }
-            //else
-            //{
-            //    horizontalForce = originalHorizontalForce;
-            //    verticalForce = originalVerticalForce;
-            //}
+                    inputY * dashForce * Time.deltaTime, 0);                                
+            }            
 
             // 종 이동
             playerRd.AddForce(0, inputY * verticalForce * Time.deltaTime, 0);            
