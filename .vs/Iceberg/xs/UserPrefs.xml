@@ -1,17 +1,13 @@
-﻿<Properties>
+﻿<Properties StartupConfiguration="{59F22D1B-8E80-4687-1155-7AAD6753F6A5}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HungrySeal/GameManager.cs">
     <Files>
-      <File FileName="Assets/HungrySeal/Scripts/SealMovement.cs" Line="78" Column="21" />
-      <File FileName="Assets/HungrySeal/Scripts/Water.cs" />
-      <File FileName="Assets/HungrySeal/Scripts/MainCameraMovement.cs" />
-      <File FileName="Assets/HungrySeal/Scripts/FishMovement.cs" />
-      <File FileName="Assets/HungrySeal/Scripts/IceBreakManager.cs" />
-      <File FileName="Assets/HungrySeal/Scripts/FrontIceMovment.cs" />
-      <File FileName="Assets/HungrySeal/Scripts/IceSpawnManager.cs" />
-      <File FileName="Assets/HungrySeal/Scripts/NpcDestroyManager.cs" />
-      <File FileName="Assets/HungrySeal/Scripts/NpcSpawnManager.cs" />
-      <File FileName="Assets/HungrySeal/Scripts/NpcMovement.cs" />
-      <File FileName="Assets/HungrySeal/GameManager.cs" Line="32" Column="14" />
+      <File FileName="Assets/HungrySeal/Scripts/TutorialManager.cs" Line="59" Column="96" />
+      <File FileName="Assets/HungrySeal/GameManager.cs" Line="63" Column="1" />
+      <File FileName="Assets/HungrySeal/Scripts/NpcSpawnManager.cs" Line="51" Column="6" />
+      <File FileName="Assets/HungrySeal/Scripts/UIManger.cs" Line="1" Column="1" />
+      <File FileName="Assets/HungrySeal/Scripts/SealMovement.cs" Line="68" Column="1" />
+      <File FileName="Assets/HungrySeal/Scripts/GameStartManager.cs" Line="26" Column="6" />
+      <File FileName="Assets/HungrySeal/Scripts/CountDownManager.cs" Line="29" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,11 +18,9 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <DisabledProjects>
-    <String>Assembly-CSharp.csproj</String>
-    <String>Assembly-CSharp-Editor.csproj</String>
-  </DisabledProjects>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Unity.2D.Sprite.Editor PreferredExecutionTarget="c7e46e5b-f30b-40df-ab15-53693de0b21e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="43f6a99c-b2c6-4158-9fc7-3b9a63d85e75" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

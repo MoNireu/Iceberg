@@ -48,7 +48,7 @@ public class NpcSpawnManager : MonoBehaviour
     }
     
     void Update()
-    {
+    {        
         updateCurrentObjAmount();
 
         // Fish 생성
