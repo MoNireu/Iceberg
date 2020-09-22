@@ -1,18 +1,26 @@
 ﻿<Properties StartupConfiguration="{59F22D1B-8E80-4687-1155-7AAD6753F6A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HungrySeal/GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HungrySeal/Scripts/TutorialManager.cs">
     <Files>
-      <File FileName="Assets/HungrySeal/Scripts/TutorialManager.cs" Line="59" Column="96" />
-      <File FileName="Assets/HungrySeal/GameManager.cs" Line="63" Column="1" />
-      <File FileName="Assets/HungrySeal/Scripts/NpcSpawnManager.cs" Line="51" Column="6" />
-      <File FileName="Assets/HungrySeal/Scripts/UIManger.cs" Line="1" Column="1" />
-      <File FileName="Assets/HungrySeal/Scripts/SealMovement.cs" Line="68" Column="1" />
-      <File FileName="Assets/HungrySeal/Scripts/GameStartManager.cs" Line="26" Column="6" />
-      <File FileName="Assets/HungrySeal/Scripts/CountDownManager.cs" Line="29" Column="1" />
+      <File FileName="Assets/HungrySeal/Scripts/TutorialManager.cs" Line="157" Column="6" />
+      <File FileName="Assets/HungrySeal/GameManager.cs" />
+      <File FileName="Assets/HungrySeal/Scripts/NpcSpawnManager.cs" />
+      <File FileName="Assets/HungrySeal/Scripts/UIManger.cs" />
+      <File FileName="Assets/HungrySeal/Scripts/SealMovement.cs" Line="96" Column="26" />
+      <File FileName="Assets/HungrySeal/Scripts/GameStartManager.cs" />
+      <File FileName="Assets/HungrySeal/Scripts/CountDownManager.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Iceberg" expanded="True" selected="True" />
+          <Node name="Iceberg" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="HungrySeal" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="TutorialManager.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
@@ -20,7 +28,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Unity.2D.Sprite.Editor PreferredExecutionTarget="c7e46e5b-f30b-40df-ab15-53693de0b21e" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="43f6a99c-b2c6-4158-9fc7-3b9a63d85e75" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="94bcaa05-cd67-4da9-a57f-a079ddce853b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
