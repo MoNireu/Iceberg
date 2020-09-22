@@ -1,13 +1,15 @@
 ﻿<Properties StartupConfiguration="{59F22D1B-8E80-4687-1155-7AAD6753F6A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HungrySeal/Scripts/TutorialManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HungrySeal/GameManager.cs">
     <Files>
-      <File FileName="Assets/HungrySeal/Scripts/TutorialManager.cs" Line="157" Column="6" />
-      <File FileName="Assets/HungrySeal/GameManager.cs" />
+      <File FileName="Assets/HungrySeal/Scripts/TutorialManager.cs" Line="160" Column="11" />
+      <File FileName="Assets/HungrySeal/Scripts/GameStartManager.cs" Line="17" Column="35" />
+      <File FileName="Assets/HungrySeal/GameManager.cs" Line="46" Column="6" />
       <File FileName="Assets/HungrySeal/Scripts/NpcSpawnManager.cs" />
       <File FileName="Assets/HungrySeal/Scripts/UIManger.cs" />
       <File FileName="Assets/HungrySeal/Scripts/SealMovement.cs" Line="96" Column="26" />
-      <File FileName="Assets/HungrySeal/Scripts/GameStartManager.cs" />
       <File FileName="Assets/HungrySeal/Scripts/CountDownManager.cs" />
+      <File FileName="Assets/HungrySeal/Scripts/PatchNoteManager.cs" Line="33" Column="42" />
+      <File FileName="Assets/HungrySeal/Scripts/GameVersionManager.cs" Line="6" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,9 +17,8 @@
           <Node name="Iceberg" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="HungrySeal" expanded="True">
-                <Node name="Scripts" expanded="True">
-                  <Node name="TutorialManager.cs" selected="True" />
-                </Node>
+                <Node name="Scripts" expanded="True" />
+                <Node name="GameManager.cs" selected="True" />
               </Node>
             </Node>
           </Node>

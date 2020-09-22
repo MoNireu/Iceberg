@@ -55,6 +55,7 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/HungrySeal/Scripts/CountDownManager.cs" />
     <Compile Include="Assets/Assets/Joystick Pack/Scripts/Base/Joystick.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Common/Wander Script/Common_AudioManager.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Common/Wander Script/Common_WanderManager.cs" />
@@ -100,7 +101,8 @@
     <Compile Include="Assets/HungrySeal/Scripts/NpcMovement.cs" />
     <Compile Include="Assets/Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/GameStartManager.cs" />
-    <Compile Include="Assets/HungrySeal/Scripts/CountDownManager.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/PatchNoteManager.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/GameVersionManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/HungrySeal/UI/Blurshader.shader" />
