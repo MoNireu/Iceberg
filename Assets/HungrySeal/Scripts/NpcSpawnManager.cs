@@ -31,7 +31,7 @@ public class NpcSpawnManager : MonoBehaviour
     private int currentTrashAmount;
 
     [SerializeField]
-    private int maxClockSpawnAmount = 3;
+    private int maxClockSpawnAmount = 2;
     private int currentClockAmount;
 
 
