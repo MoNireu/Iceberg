@@ -5,7 +5,10 @@ ScriptsOnlyBuild:
     - FixedJoystick
     - FrontIceMovment
     - GameManager
+    - GameOverManager
+    - GamePauseManager
     - GameStartManager
+    - GameVersionManager
     - IceBreakManager
     - IceSpawnManager
     - Joybutton
@@ -13,6 +16,7 @@ ScriptsOnlyBuild:
     - NpcDestroyManager
     - NpcMovement
     - NpcSpawnManager
+    - PatchNoteManager
     - PolyPerfect.Animal_AIStats
     - PolyPerfect.Animal_WanderScript
     - SealMovement
@@ -125,45 +129,51 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11938}
     - Class: 114
+      Script: {instanceID: 11942}
+    - Class: 114
       Script: {instanceID: 11944}
     - Class: 114
       Script: {instanceID: 11946}
     - Class: 114
       Script: {instanceID: 11952}
     - Class: 114
-      Script: {instanceID: 12184}
+      Script: {instanceID: 11956}
     - Class: 114
-      Script: {instanceID: 12244}
+      Script: {instanceID: 12186}
     - Class: 114
-      Script: {instanceID: 12518}
+      Script: {instanceID: 12246}
     - Class: 114
-      Script: {instanceID: 12944}
+      Script: {instanceID: 12520}
     - Class: 114
-      Script: {instanceID: 13316}
+      Script: {instanceID: 12946}
     - Class: 114
-      Script: {instanceID: 13984}
+      Script: {instanceID: 13318}
     - Class: 114
-      Script: {instanceID: 14062}
+      Script: {instanceID: 13986}
     - Class: 114
-      Script: {instanceID: 14074}
+      Script: {instanceID: 14064}
     - Class: 114
-      Script: {instanceID: 14840}
+      Script: {instanceID: 14076}
     - Class: 114
-      Script: {instanceID: 14950}
+      Script: {instanceID: 14842}
     - Class: 114
-      Script: {instanceID: 15026}
+      Script: {instanceID: 14952}
     - Class: 114
-      Script: {instanceID: 15264}
+      Script: {instanceID: 15028}
     - Class: 114
-      Script: {instanceID: 15398}
+      Script: {instanceID: 15266}
     - Class: 114
-      Script: {instanceID: 15764}
+      Script: {instanceID: 15400}
     - Class: 114
-      Script: {instanceID: 16116}
+      Script: {instanceID: 15766}
     - Class: 114
-      Script: {instanceID: 16166}
+      Script: {instanceID: 16118}
     - Class: 114
-      Script: {instanceID: 1223742}
+      Script: {instanceID: 16168}
+    - Class: 114
+      Script: {instanceID: 1590644}
+    - Class: 114
+      Script: {instanceID: 2209248}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -213,21 +223,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 54
-      Script: {instanceID: 0}
-    - Class: 64
-      Script: {instanceID: 0}
     - Class: 65
-      Script: {instanceID: 0}
-    - Class: 74
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
-      Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
-    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -252,90 +252,84 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11952}
     - Class: 114
-      Script: {instanceID: 12126}
+      Script: {instanceID: 12128}
     - Class: 114
-      Script: {instanceID: 12244}
+      Script: {instanceID: 12246}
     - Class: 114
-      Script: {instanceID: 12252}
+      Script: {instanceID: 12254}
     - Class: 114
-      Script: {instanceID: 12278}
+      Script: {instanceID: 12280}
     - Class: 114
-      Script: {instanceID: 12500}
+      Script: {instanceID: 12502}
     - Class: 114
-      Script: {instanceID: 12700}
+      Script: {instanceID: 12702}
     - Class: 114
-      Script: {instanceID: 13096}
+      Script: {instanceID: 13098}
     - Class: 114
-      Script: {instanceID: 13168}
+      Script: {instanceID: 13170}
     - Class: 114
-      Script: {instanceID: 13316}
+      Script: {instanceID: 13318}
     - Class: 114
-      Script: {instanceID: 13440}
+      Script: {instanceID: 13442}
     - Class: 114
-      Script: {instanceID: 13698}
+      Script: {instanceID: 13700}
     - Class: 114
-      Script: {instanceID: 13740}
+      Script: {instanceID: 13742}
     - Class: 114
-      Script: {instanceID: 13814}
+      Script: {instanceID: 13816}
     - Class: 114
-      Script: {instanceID: 13936}
+      Script: {instanceID: 13938}
     - Class: 114
-      Script: {instanceID: 13984}
+      Script: {instanceID: 14312}
     - Class: 114
-      Script: {instanceID: 14310}
+      Script: {instanceID: 14386}
     - Class: 114
-      Script: {instanceID: 14384}
+      Script: {instanceID: 14640}
     - Class: 114
-      Script: {instanceID: 14638}
+      Script: {instanceID: 14708}
     - Class: 114
-      Script: {instanceID: 14706}
+      Script: {instanceID: 14728}
     - Class: 114
-      Script: {instanceID: 14726}
+      Script: {instanceID: 14842}
     - Class: 114
-      Script: {instanceID: 14840}
+      Script: {instanceID: 14876}
     - Class: 114
-      Script: {instanceID: 14874}
+      Script: {instanceID: 14918}
     - Class: 114
-      Script: {instanceID: 14916}
+      Script: {instanceID: 14926}
     - Class: 114
-      Script: {instanceID: 14924}
+      Script: {instanceID: 15028}
     - Class: 114
-      Script: {instanceID: 15026}
+      Script: {instanceID: 15290}
     - Class: 114
-      Script: {instanceID: 15288}
+      Script: {instanceID: 15378}
     - Class: 114
-      Script: {instanceID: 15376}
+      Script: {instanceID: 15660}
     - Class: 114
-      Script: {instanceID: 15658}
+      Script: {instanceID: 15860}
     - Class: 114
-      Script: {instanceID: 15764}
-    - Class: 114
-      Script: {instanceID: 15858}
-    - Class: 114
-      Script: {instanceID: 15910}
-    - Class: 114
-      Script: {instanceID: 16130}
+      Script: {instanceID: 15912}
     - Class: 114
       Script: {instanceID: 16132}
     - Class: 114
-      Script: {instanceID: 16166}
+      Script: {instanceID: 16134}
     - Class: 114
-      Script: {instanceID: 16194}
+      Script: {instanceID: 16168}
     - Class: 114
-      Script: {instanceID: 16330}
+      Script: {instanceID: 16196}
     - Class: 114
-      Script: {instanceID: 16338}
+      Script: {instanceID: 16282}
     - Class: 114
-      Script: {instanceID: 669050}
+      Script: {instanceID: 16334}
+    - Class: 114
+      Script: {instanceID: 16342}
+    - Class: 114
+      Script: {instanceID: 210964}
+    - Class: 114
+      Script: {instanceID: 626640}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
-      Script: {instanceID: 0}
-    - Class: 135
-      Script: {instanceID: 0}
-    - Class: 136
-      Script: {instanceID: 0}
-    - Class: 137
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -408,6 +402,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CountDownManager
   - hash:
       serializedVersion: 2
       Hash: ce669872a2be11bc686ea22961d8a3bb
@@ -866,7 +866,7 @@ ScriptsOnlyBuild:
     className: FrontIceMovment
   - hash:
       serializedVersion: 2
-      Hash: e015f5491fe19172531ca408b076b85f
+      Hash: 177784b38157e8000bdd099218c882ce
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1418,6 +1418,12 @@ ScriptsOnlyBuild:
     className: CoroutineExecutor
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameStartManager
+  - hash:
+      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1454,16 +1460,28 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 9056bacc0265e63f274158806f7247ec
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GameStartManager
+    className: PatchNoteManager
+  - hash:
+      serializedVersion: 2
+      Hash: 41a0e69e6d05a7bae0a0866f3565f931
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameVersionManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: CountDownManager
+    className: GamePauseManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameOverManager
   platform: 9
   scenePathNames:
   - Assets/HungrySeal/StartMenu.unity
