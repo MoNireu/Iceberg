@@ -103,6 +103,8 @@
     <Compile Include="Assets/HungrySeal/Scripts/GameStartManager.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/PatchNoteManager.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/GameVersionManager.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/GamePauseManager.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/GameOverManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/HungrySeal/UI/Blurshader.shader" />
