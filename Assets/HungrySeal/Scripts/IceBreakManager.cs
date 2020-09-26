@@ -27,7 +27,7 @@ public class IceBreakManager : MonoBehaviour
         if (hitCount != 0)
         {
             fadeAndDestroy();
-        }        
+        }
     }
 
     private void OnTriggerEnter(Collider collider)

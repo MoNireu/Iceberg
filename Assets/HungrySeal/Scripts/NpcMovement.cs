@@ -10,12 +10,11 @@ public class NpcMovement : MonoBehaviour
     [SerializeField] private float moveDelayTime;    
     private float moveDelaytimer = 0;
 
-
-    private Vector3 trashRotation;
-    private float trashRotateSpeed;
-    
     private bool isMoveComplete;
     private Vector3 targetPosition;
+
+    private Vector3 trashRotation;
+    private float trashRotateSpeed;       
 
     private Vector3 clockRotation;
     float clockRotateSpeedX = 10f;
@@ -34,21 +33,21 @@ public class NpcMovement : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         if (isMoveComplete)
         {
             moveDelaytimer += Time.deltaTime;
             if (moveDelaytimer > moveDelayTime)
             {
-                targetPosition = getNewRandomPosition();                
+                targetPosition = getNewRandomPosition();
 
                 moveDelaytimer = 0f; //타이머 초기화
             }
         }
         else
-        {            
-            goToNewPosition();            
+        {
+            goToNewPosition();
         }
 
         checkMoveComplete();
@@ -95,6 +94,7 @@ public class NpcMovement : MonoBehaviour
                 float currentX = transform.position.x;
                 float targetX = targetPosition.x;
 
+                //transform.rotation = Quaternion.LookRotation(targetPosition);
                 if (currentX < targetX) //우측으로 이동시
                 {
                     transform.localScale = new Vector3(

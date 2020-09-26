@@ -4,39 +4,30 @@ using UnityEngine;
 
 public class NpcDestroyManager : MonoBehaviour
 {   
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider npc)
     {
         switch (npc.tag)
         {
             case "Fish":
-                GameManager.instance.addScore(npc.tag);
-                Destroy(npc.gameObject);
+                GameManager.instance.addScore(npc.tag);                
+                NpcSpawnManager.instance.ReturnObject(npc.gameObject);
+                UIManger.instance.ShowIndicator(Npc.fish);
                 break;
             case "JellyFish":
-                GameManager.instance.addScore(npc.tag);
-                Destroy(npc.gameObject);
+                GameManager.instance.addScore(npc.tag);                
+                NpcSpawnManager.instance.ReturnObject(npc.gameObject);
+                UIManger.instance.ShowIndicator(Npc.jellyFish);
                 break;
             case "Trash":
-                GameManager.instance.addScore(npc.tag);
-                Destroy(npc.gameObject);
+                GameManager.instance.addScore(npc.tag);                
+                NpcSpawnManager.instance.ReturnObject(npc.gameObject);
+                UIManger.instance.ShowIndicator(Npc.trash);
                 break;
             case "Clock":
                 GameManager.instance.addScore(npc.tag);
-                Destroy(npc.gameObject);
+                NpcSpawnManager.instance.ReturnObject(npc.gameObject);
+                UIManger.instance.ShowIndicator(Npc.clock);
                 break;
-
         }        
     }
 }

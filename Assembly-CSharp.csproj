@@ -61,13 +61,22 @@
     <Compile Include="Assets/Assets/polyperfect 2/Common/Wander Script/Common_WanderManager.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Common/Wander Script/AIState.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Common/Wander Script/AIStats.cs" />
+    <Compile Include="Assets/GoogleSignIn/GoogleSignInConfiguration.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Low Poly Animated Animals/- Scripts/Wander Script/Animal_WanderScript.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/MainCameraMovement.cs" />
-    <Compile Include="Assets/HungrySeal/Scripts/FishMovement.cs" />
+    <Compile Include="Assets/GoogleSignIn/GoogleSignInUser.cs" />
+    <Compile Include="Assets/House/Scripts/TargetPointerSpinManger.cs" />
+    <Compile Include="Assets/House/Scripts/ObjectUIManager.cs" />
+    <Compile Include="Assets/SignIn/FirebaseManager.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/IndicatorManager.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/GameOverManager.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/IceBreakManager.cs" />
+    <Compile Include="Assets/GoogleSignIn/GoogleSignIn.cs" />
     <Compile Include="Assets/Assets/Joystick Pack/Examples/JoystickSetterExample.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Low Poly Animated Animals/- Scripts/Wander Script/Animal_AIStats.cs" />
     <Compile Include="Assets/Assets/LowPolyWater_Pack/Scripts/LowPolyWater.cs" />
+    <Compile Include="Assets/House/Scripts/PlayerMovement.cs" />
+    <Compile Include="Assets/GoogleSignIn/Impl/SignInHelperObject.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Common/Wander Script/Common_WanderScript.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Common/Common_RandomInt.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Low Poly Animated Animals/- Scripts/AnimalWanderManager.cs" />
@@ -76,23 +85,35 @@
     <Compile Include="Assets/HungrySeal/Scripts/NpcDestroyManager.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/FrontIceMovment.cs" />
     <Compile Include="Assets/HungrySeal/GameManager.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/AudioManager.cs" />
+    <Compile Include="Assets/GoogleSignIn/Impl/GoogleSignInImpl.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/TutorialManager.cs" />
+    <Compile Include="Assets/SignIn/FirbaseLogin.cs" />
+    <Compile Include="Assets/GoogleSignIn/Impl/NativeFuture.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/GamePauseManager.cs" />
     <Compile Include="Assets/Assets/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs" />
     <Compile Include="Assets/Assets/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs" />
+    <Compile Include="Assets/GoogleSignIn/Impl/BaseObject.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Common/Wander Script/Common_SurfaceRotation.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/UIManger.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Common/Wander Script/IdleState.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Common/Common_AnimationControl.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/Joybutton.cs" />
+    <Compile Include="Assets/Assets/QuickOutline/Scripts/Outline.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Common/RandomCharacterPlacer.cs" />
+    <Compile Include="Assets/GoogleSignIn/Future.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Common/Common_PlaySound.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/IceSpawnManager.cs" />
     <Compile Include="Assets/Assets/Joystick Pack/Examples/JoystickPlayerExample.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Common/Wander Script/MovementState.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Low Poly Animated Animals/- Scripts/AnimalAudioManager.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/NpcSpawnManager.cs" />
+    <Compile Include="Assets/GoogleSignIn/GoogleSignInStatusCode.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/PatchNoteManager.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Low Poly Animated Animals/- Scripts/AnimalPlaySound.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Common/Common_KillSwitch.cs" />
+    <Compile Include="Assets/House/Scripts/MediaDevicesInteractionManager.cs" />
+    <Compile Include="Assets/HungrySeal/Scripts/GameVersionManager.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Low Poly Animated Animals/- Scripts/ToggleEvent.cs" />
     <Compile Include="Assets/Assets/polyperfect 2/Low Poly Animated Animals/- Scripts/SceneAnimatorController.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/SealMovement.cs" />
@@ -101,18 +122,35 @@
     <Compile Include="Assets/HungrySeal/Scripts/NpcMovement.cs" />
     <Compile Include="Assets/Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs" />
     <Compile Include="Assets/HungrySeal/Scripts/GameStartManager.cs" />
-    <Compile Include="Assets/HungrySeal/Scripts/PatchNoteManager.cs" />
-    <Compile Include="Assets/HungrySeal/Scripts/GameVersionManager.cs" />
-    <Compile Include="Assets/HungrySeal/Scripts/GamePauseManager.cs" />
-    <Compile Include="Assets/HungrySeal/Scripts/GameOverManager.cs" />
+    <Compile Include="Assets/Assets/Elenesski Generic Move Camera/GenericMoveCamera.cs" />
+    <Compile Include="Assets/Assets/Elenesski Generic Move Camera/GenericMoveCameraInputs.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets/HungrySeal/UI/Blurshader.shader" />
+     <None Include="Assets/Parse/Plugins/Unity.Compat.dll" />
+     <None Include="Assets/HungrySeal/Resources/UI/Blurshader.shader" />
+     <None Include="Assets/Firebase/Plugins/Firebase.App.dll" />
+     <None Include="Assets/Parse/Plugins/Unity.Tasks.dll" />
+     <None Include="Assets/Assets/QuickOutline/Resources/Shaders/OutlineMask.shader" />
+     <None Include="Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.dll" />
      <None Include="Assets/Assets/HolyShift/Shaders/FXWaterLowpoly.shader" />
+     <None Include="Assets/Firebase/Plugins/Firebase.TaskExtension.dll" />
      <None Include="Assets/Assets/LowPolyWater_Pack/Shaders/WaterShaded.shader" />
+     <None Include="Assets/Firebase/m2repository/com/google/firebase/firebase-app-unity/maven-metadata.xml" />
+     <None Include="Assets/Firebase/Plugins/Firebase.Auth.dll" />
      <None Include="Assets/Assets/LowPolyWater_Pack/LowPoly Island/Credits.txt" />
+     <None Include="Assets/Firebase/m2repository/com/google/firebase/firebase-auth-unity/maven-metadata.xml" />
+     <None Include="Assets/Assets/QuickOutline/Readme.txt" />
+     <None Include="Assets/Firebase/Plugins/iOS/Firebase.Auth.dll" />
      <None Include="Assets/Assets/HolyShift/readme.txt" />
      <None Include="Assets/Assets/HolyShift/Shaders/WaterInclude.cginc" />
+     <None Include="Assets/Firebase/Plugins/x86_64/FirebaseCppApp-6_15_2.dll" />
+     <None Include="Assets/Parse/Plugins/dotNet45/Unity.Compat.dll" />
+     <None Include="Assets/Firebase/Plugins/Firebase.Platform.dll" />
+     <None Include="Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll" />
+     <None Include="Assets/PolygonCity/Change_Log.txt" />
+     <None Include="Assets/Firebase/Plugins/Google.MiniJson.dll" />
+     <None Include="Assets/Assets/QuickOutline/Resources/Shaders/OutlineFill.shader" />
+     <None Include="Assets/Firebase/Plugins/iOS/Firebase.App.dll" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Hub/Editor/2020.1.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -292,6 +330,27 @@
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>/Applications/Unity/Hub/Editor/2020.1.4f1/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Compat">
+      <HintPath>Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tasks">
+      <HintPath>Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Auth">
+      <HintPath>Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.MiniJson">
+      <HintPath>Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.App">
+      <HintPath>Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Platform">
+      <HintPath>Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.TaskExtension">
+      <HintPath>Assets/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>

@@ -28,12 +28,13 @@ public class IceSpawnManager : MonoBehaviour
         if (randomDelayTime < 0)
         {
             resetRandomValues();
-            createIce(randomSelectValue);                        
+            createIce(randomSelectValue);
         }
         else
         {
             randomDelayTime -= 1f * Time.deltaTime;
         }
+
     }
 
 

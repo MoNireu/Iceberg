@@ -1,28 +1,33 @@
 ﻿<Properties StartupConfiguration="{59F22D1B-8E80-4687-1155-7AAD6753F6A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HungrySeal/Scripts/GameOverManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/House/Scripts/MediaDevicesInteractionManager.cs">
     <Files>
-      <File FileName="Assets/HungrySeal/Scripts/TutorialManager.cs" Line="160" Column="11" />
-      <File FileName="Assets/HungrySeal/Scripts/GameStartManager.cs" Line="43" Column="32" />
-      <File FileName="Assets/HungrySeal/GameManager.cs" Line="204" Column="52" />
-      <File FileName="Assets/HungrySeal/Scripts/NpcSpawnManager.cs" Line="34" Column="40" />
-      <File FileName="Assets/HungrySeal/Scripts/UIManger.cs" Line="30" Column="5" />
-      <File FileName="Assets/HungrySeal/Scripts/SealMovement.cs" Line="96" Column="26" />
-      <File FileName="Assets/HungrySeal/Scripts/CountDownManager.cs" Line="39" Column="23" />
-      <File FileName="Assets/HungrySeal/Scripts/PatchNoteManager.cs" Line="14" Column="1" />
-      <File FileName="Assets/HungrySeal/Scripts/GameVersionManager.cs" Line="8" Column="19" />
-      <File FileName="Assets/HungrySeal/Scripts/GamePauseManager.cs" Line="47" Column="67" />
-      <File FileName="Assets/HungrySeal/Scripts/GameOverManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Assets/QuickOutline/Scripts/Outline.cs" Line="1" Column="1" />
+      <File FileName="Assets/Assets/QuickOutline/Readme.txt" />
+      <File FileName="Assets/House/Scripts/ObjectUIManager.cs" />
+      <File FileName="Assets/House/Scripts/PlayerMovement.cs" />
+      <File FileName="Assets/Assets/Elenesski Generic Move Camera/GenericMoveCamera.cs" />
+      <File FileName="Assets/House/Scripts/MediaDevicesInteractionManager.cs" Line="35" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Iceberg" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="HungrySeal" expanded="True">
-                <Node name="Scripts" expanded="True">
-                  <Node name="GameOverManager.cs" selected="True" />
+              <Node name="Assets" expanded="True">
+                <Node name="Elenesski Generic Move Camera" expanded="True" />
+                <Node name="QuickOutline" expanded="True">
+                  <Node name="Scripts" expanded="True" />
                 </Node>
               </Node>
+              <Node name="House" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="MediaDevicesInteractionManager.cs" selected="True" />
+                </Node>
+              </Node>
+              <Node name="HungrySeal" expanded="True">
+                <Node name="Scripts" expanded="True" />
+              </Node>
+              <Node name="SignIn" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -32,7 +37,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Unity.2D.Sprite.Editor PreferredExecutionTarget="c7e46e5b-f30b-40df-ab15-53693de0b21e" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="94bcaa05-cd67-4da9-a57f-a079ddce853b" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b68e6993-9403-4b88-889e-fdf8facc69bf" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

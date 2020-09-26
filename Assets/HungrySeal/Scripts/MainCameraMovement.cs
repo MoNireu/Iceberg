@@ -39,7 +39,7 @@ public class MainCameraMovement : MonoBehaviour
     {
         Vector3 newPos = playerTf.position + _cameraOffset;
 
-        transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor);       
+        transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor);
 
         if (transform.position.y < 0)
         {
