@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "533315094652",
+    "firebase_url": "https://iceberg-375d8.firebaseio.com",
+    "project_id": "iceberg-375d8",
+    "storage_bucket": "iceberg-375d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533315094652:android:fac6f077a962605fc4a1f9",
+        "android_client_info": {
+          "package_name": "com.GBB.Iceberg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533315094652-geg8on546hk1nvcal58spoaeqsm011i9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.GBB.Iceberg",
+            "certificate_hash": "1afad83d0ee2753f953a2eda71c3ccfa1f02d52e"
+          }
+        },
+        {
+          "client_id": "533315094652-dc8rou50o2h91fqb3b8nn950rjp1ickc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.GBB.Iceberg",
+            "certificate_hash": "4454696adc4d651bf35d73cba4bca5f8f5215ffe"
+          }
+        },
+        {
+          "client_id": "533315094652-ovs98f0uas0mrskp2pc0upu67g4on7mh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDylil2TS5UUvTC0R_Hg1WFNcRJjp4Xatc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533315094652-ovs98f0uas0mrskp2pc0upu67g4on7mh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "533315094652-5hp6v3lq24okmpghnh7r2rt49sk6p382.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.GBB.Iceberg"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

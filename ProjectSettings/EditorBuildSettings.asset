@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/SignInSample/MainScene.unity
+    guid: 4dbc020c6ee6d47e2a668e83cc5ee276
+  - enabled: 1
+    path: Assets/SignIn/SignIn.unity
+    guid: f1a8bf353021b4092914098cca4f0513
+  - enabled: 1
+    path: Assets/HungrySeal/StartMenu.unity
+    guid: 55fbd47a2da874968878bd91d8adf614
+  - enabled: 1
+    path: Assets/HungrySeal/HungrySeal.unity
+    guid: 6943f8d459bd449159e91a6f8571aa16
   m_configObjects: {}

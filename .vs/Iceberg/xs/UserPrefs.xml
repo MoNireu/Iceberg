@@ -1,16 +1,33 @@
 ﻿<Properties StartupConfiguration="{59F22D1B-8E80-4687-1155-7AAD6753F6A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MainCameraMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/House/Scripts/MediaDevicesInteractionManager.cs">
     <Files>
-      <File FileName="Assets/SealMovement.cs" Line="16" Column="1" />
-      <File FileName="Assets/CameraMovement.cs" Line="8" Column="31" />
-      <File FileName="Assets/MainCameraMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Assets/QuickOutline/Scripts/Outline.cs" Line="1" Column="1" />
+      <File FileName="Assets/Assets/QuickOutline/Readme.txt" />
+      <File FileName="Assets/House/Scripts/ObjectUIManager.cs" />
+      <File FileName="Assets/House/Scripts/PlayerMovement.cs" />
+      <File FileName="Assets/Assets/Elenesski Generic Move Camera/GenericMoveCamera.cs" />
+      <File FileName="Assets/House/Scripts/MediaDevicesInteractionManager.cs" Line="35" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Iceberg" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="MainCameraMovement.cs" selected="True" />
+              <Node name="Assets" expanded="True">
+                <Node name="Elenesski Generic Move Camera" expanded="True" />
+                <Node name="QuickOutline" expanded="True">
+                  <Node name="Scripts" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="House" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="MediaDevicesInteractionManager.cs" selected="True" />
+                </Node>
+              </Node>
+              <Node name="HungrySeal" expanded="True">
+                <Node name="Scripts" expanded="True" />
+              </Node>
+              <Node name="SignIn" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -19,7 +36,8 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="27ed46bc-8393-4538-b5c8-cd752d26e8d6" />
+  <MonoDevelop.Ide.ItemProperties.Unity.2D.Sprite.Editor PreferredExecutionTarget="c7e46e5b-f30b-40df-ab15-53693de0b21e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b68e6993-9403-4b88-889e-fdf8facc69bf" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
